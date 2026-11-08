@@ -389,7 +389,16 @@ class Component extends DCLogic {
           if (!ok) { msg.style.color = '#F2B8B5'; msg.textContent = 'Controlla i campi evidenziati e la casella della privacy.'; return; }
           const btn = fm.querySelector('button[type=submit]'); const label = btn.textContent;
           btn.disabled = true; btn.textContent = 'INVIO…'; msg.textContent = '';
-          const g = (n) => (fm.querySelector('[name=' + n + ']') || {}).value || ''; if (g('sito_web')) return; const bodyTxt = 'Nome: ' + g('nome') + '\nTelefono: ' + g('telefono') + '\nEmail: ' + g('email') + '\n\n' + g('messaggio'); setTimeout(() => { btn.disabled = false; btn.textContent = label; msg.style.color = '#C9D7D9'; msg.textContent = '✓ Si apre la tua app email con il messaggio pronto: premi Invia.'; window.location.href = 'mailto:mattiamolise.osteo@gmail.com?subject=' + encodeURIComponent('Richiesta dal sito') + '&body=' + encodeURIComponent(bodyTxt); }, 400);
+          const g = (n) => ((fm.querySelector('[name=' + n + ']') || {}).value || '').trim();
+          const done = (ok, t) => { btn.disabled = false; btn.textContent = label; msg.style.color = ok ? '#C9D7D9' : '#F2B8B5'; msg.textContent = t; };
+          if (g('sito_web')) { done(true, '✓ Messaggio inviato. Ti rispondo appena possibile.'); return; }
+          const KEY = '9c3a72e6-168f-41bf-a1b0-f792123aa53f';
+          const bodyTxt = 'Nome: ' + g('nome') + '\nTelefono: ' + g('telefono') + '\nEmail: ' + g('email') + '\n\n' + g('messaggio');
+          if (!KEY) { done(true, '✓ Si apre la tua app email con il messaggio pronto: premi Invia.'); window.location.href = 'mailto:mattiamolise.osteo@gmail.com?subject=' + encodeURIComponent('Richiesta dal sito') + '&body=' + encodeURIComponent(bodyTxt); return; }
+          fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ access_key: KEY, subject: 'Nuovo messaggio dal sito · ' + g('nome'), from_name: 'Sito Mattia Molise', name: g('nome'), email: g('email'), telefono: g('telefono'), message: g('messaggio'), botcheck: '' }) })
+            .then((r) => r.json()).then((j) => { if (j && j.success) { fm.reset(); done(true, '✓ Messaggio inviato. Ti rispondo appena possibile.'); } else { throw new Error(); } })
+            .catch(() => done(false, 'Invio non riuscito. Riprova o scrivimi su WhatsApp al 331 357 0472.'));
         };
         fm.addEventListener('submit', sub);
         return () => fm.removeEventListener('submit', sub);

@@ -166,7 +166,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
         <span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#1F4E5A">04</span>
         <h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.15">Chi può vederli</h2>
         <p style="margin:0;font-size:17px;line-height:1.7;color:#3D4F52">I dati li tratto io personalmente. Per far funzionare il sito mi affido ad alcuni fornitori, che li trattano solo per conto mio:</p>
-        <p style="margin:0;font-size:17px;line-height:1.7;color:#3D4F52">• il fornitore che ospita il sito: <span style="background:#DED4C9;padding:0 .3em;border-radius:3px;color:#0D2328">[nome dell’hosting: da completare]</span>;<br>• il servizio che invia i messaggi del modulo alla mia email: <span style="background:#DED4C9;padding:0 .3em;border-radius:3px;color:#0D2328">[per esempio Formspree o Web3Forms: da completare]</span>;<br>• Google, solo se apri la mappa (vedi la sezione sui cookie);<br>• WhatsApp (Meta), solo se scegli di scrivermi lì, secondo la sua informativa.</p>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#3D4F52">• GitHub (GitHub Pages), che ospita il sito;<br>• Web3Forms, il servizio che inoltra i messaggi del modulo alla mia email;<br>• Google, solo se apri la mappa (vedi la sezione sui cookie);<br>• WhatsApp (Meta), solo se scegli di scrivermi lì, secondo la sua informativa.</p>
         <p style="margin:0;font-size:17px;line-height:1.7;color:#3D4F52">Alcuni di questi fornitori possono trattare dati fuori dall’Unione Europea, sulla base delle garanzie previste dal GDPR (per esempio il Data Privacy Framework UE-USA o le clausole contrattuali standard). <span style="background:#DED4C9;padding:0 .3em;border-radius:3px;color:#0D2328">[da verificare per i fornitori scelti]</span></p>
       </section>
       <section id="conservazione" class="rv rv-up" style="display:flex;flex-direction:column;gap:14px;padding:36px 0;border-top:1.5px solid #0D2328;scroll-margin-top:110px">
@@ -342,7 +342,16 @@ class Component extends DCLogic {
           if (!ok) { msg.style.color = '#F2B8B5'; msg.textContent = 'Controlla i campi evidenziati e la casella della privacy.'; return; }
           const btn = fm.querySelector('button[type=submit]'); const label = btn.textContent;
           btn.disabled = true; btn.textContent = 'INVIO…'; msg.textContent = '';
-          const g = (n) => (fm.querySelector('[name=' + n + ']') || {}).value || ''; if (g('sito_web')) return; const bodyTxt = 'Nome: ' + g('nome') + '\nTelefono: ' + g('telefono') + '\nEmail: ' + g('email') + '\n\n' + g('messaggio'); setTimeout(() => { btn.disabled = false; btn.textContent = label; msg.style.color = '#C9D7D9'; msg.textContent = '✓ Si apre la tua app email con il messaggio pronto: premi Invia.'; window.location.href = 'mailto:mattiamolise.osteo@gmail.com?subject=' + encodeURIComponent('Richiesta dal sito') + '&body=' + encodeURIComponent(bodyTxt); }, 400);
+          const g = (n) => ((fm.querySelector('[name=' + n + ']') || {}).value || '').trim();
+          const done = (ok, t) => { btn.disabled = false; btn.textContent = label; msg.style.color = ok ? '#C9D7D9' : '#F2B8B5'; msg.textContent = t; };
+          if (g('sito_web')) { done(true, '✓ Messaggio inviato. Ti rispondo appena possibile.'); return; }
+          const KEY = '9c3a72e6-168f-41bf-a1b0-f792123aa53f';
+          const bodyTxt = 'Nome: ' + g('nome') + '\nTelefono: ' + g('telefono') + '\nEmail: ' + g('email') + '\n\n' + g('messaggio');
+          if (!KEY) { done(true, '✓ Si apre la tua app email con il messaggio pronto: premi Invia.'); window.location.href = 'mailto:mattiamolise.osteo@gmail.com?subject=' + encodeURIComponent('Richiesta dal sito') + '&body=' + encodeURIComponent(bodyTxt); return; }
+          fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ access_key: KEY, subject: 'Nuovo messaggio dal sito · ' + g('nome'), from_name: 'Sito Mattia Molise', name: g('nome'), email: g('email'), telefono: g('telefono'), message: g('messaggio'), botcheck: '' }) })
+            .then((r) => r.json()).then((j) => { if (j && j.success) { fm.reset(); done(true, '✓ Messaggio inviato. Ti rispondo appena possibile.'); } else { throw new Error(); } })
+            .catch(() => done(false, 'Invio non riuscito. Riprova o scrivimi su WhatsApp al 331 357 0472.'));
         };
         fm.addEventListener('submit', sub);
         return () => fm.removeEventListener('submit', sub);

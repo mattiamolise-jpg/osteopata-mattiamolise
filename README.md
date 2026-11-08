@@ -31,7 +31,7 @@ Sito di **Mattia Molise**, osteopata e chinesiologo a Casalecchio di Reno e Bolo
 | Contatti | `contatti.html` |
 | Privacy e cookie | `privacy.html` |
 
-Sito statico (HTML, CSS, JavaScript), pubblicato con GitHub Pages.
+Sito statico (HTML, CSS, JavaScript), pubblicato con GitHub Pages. Il modulo di contatto invia i messaggi tramite [Web3Forms](https://web3forms.com).
 
 ---
 

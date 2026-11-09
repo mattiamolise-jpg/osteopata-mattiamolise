@@ -7,9 +7,11 @@
 <title>Gravidanza e terza età · Osteopata a Casalecchio · Mattia Molise</title>
 <link rel="icon" href="assets/img/logo-v2-micro.svg" type="image/svg+xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+
+
 <style>
+@font-face{font-family:'Atkinson Hyperlegible';src:url('assets/fonts/atk400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Atkinson Hyperlegible';src:url('assets/fonts/atk700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
 body{margin:0;background:#ECE6DF}
 @font-face{font-family:'MMDigits';src:url('assets/fonts/brown-Regular.woff2') format('woff2');font-weight:400;unicode-range:U+0030-0039}@font-face{font-family:'MMDigits';src:url('assets/fonts/brown-Bold.woff2') format('woff2');font-weight:700;unicode-range:U+0030-0039}
 @font-face{font-family:'Brown';src:url('assets/fonts/brown-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
@@ -412,7 +414,16 @@ class Component extends DCLogic {
           if (!ok) { msg.style.color = '#F2B8B5'; msg.textContent = 'Controlla i campi evidenziati e la casella della privacy.'; return; }
           const btn = fm.querySelector('button[type=submit]'); const label = btn.textContent;
           btn.disabled = true; btn.textContent = 'INVIO…'; msg.textContent = '';
-          const g = (n) => (fm.querySelector('[name=' + n + ']') || {}).value || ''; if (g('sito_web')) return; const bodyTxt = 'Nome: ' + g('nome') + '\nTelefono: ' + g('telefono') + '\nEmail: ' + g('email') + '\n\n' + g('messaggio'); setTimeout(() => { btn.disabled = false; btn.textContent = label; msg.style.color = '#C9D7D9'; msg.textContent = '✓ Si apre la tua app email con il messaggio pronto: premi Invia.'; window.location.href = 'mailto:mattiamolise.osteo@gmail.com?subject=' + encodeURIComponent('Richiesta dal sito') + '&body=' + encodeURIComponent(bodyTxt); }, 400);
+          const g = (n) => ((fm.querySelector('[name=' + n + ']') || {}).value || '').trim();
+          const done = (ok, t) => { btn.disabled = false; btn.textContent = label; msg.style.color = ok ? '#C9D7D9' : '#F2B8B5'; msg.textContent = t; };
+          if (g('sito_web')) { done(true, '✓ Messaggio inviato. Ti rispondo appena possibile.'); return; }
+          const KEY = '9c3a72e6-168f-41bf-a1b0-f792123aa53f';
+          const bodyTxt = 'Nome: ' + g('nome') + '\nTelefono: ' + g('telefono') + '\nEmail: ' + g('email') + '\n\n' + g('messaggio');
+          if (!KEY) { done(true, '✓ Si apre la tua app email con il messaggio pronto: premi Invia.'); window.location.href = 'mailto:mattiamolise.osteo@gmail.com?subject=' + encodeURIComponent('Richiesta dal sito') + '&body=' + encodeURIComponent(bodyTxt); return; }
+          fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ access_key: KEY, subject: 'Nuovo messaggio dal sito · ' + g('nome'), from_name: 'Sito Mattia Molise', name: g('nome'), email: g('email'), telefono: g('telefono'), message: g('messaggio'), botcheck: '' }) })
+            .then((r) => r.json()).then((j) => { if (j && j.success) { fm.reset(); done(true, '✓ Messaggio inviato. Ti rispondo appena possibile.'); } else { throw new Error(); } })
+            .catch(() => done(false, 'Invio non riuscito. Riprova o scrivimi su WhatsApp al 331 357 0472.'));
         };
         fm.addEventListener('submit', sub);
         return () => fm.removeEventListener('submit', sub);

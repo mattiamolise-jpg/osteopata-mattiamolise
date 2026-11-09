@@ -7,9 +7,11 @@
 <title>Osteopata a Casalecchio di Reno e Bologna · Mattia Molise</title>
 <link rel="icon" href="assets/img/logo-v2-micro.svg" type="image/svg+xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+
+
 <style>
+@font-face{font-family:'Atkinson Hyperlegible';src:url('assets/fonts/atk400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Atkinson Hyperlegible';src:url('assets/fonts/atk700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
 body{margin:0;background:#ECE6DF}
 @font-face{font-family:'MMDigits';src:url('assets/fonts/brown-Regular.woff2') format('woff2');font-weight:400;unicode-range:U+0030-0039}@font-face{font-family:'MMDigits';src:url('assets/fonts/brown-Bold.woff2') format('woff2');font-weight:700;unicode-range:U+0030-0039}
 @font-face{font-family:'Brown';src:url('assets/fonts/brown-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
@@ -331,6 +333,8 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     </div>
   </section>
 
+  <!-- RECENSIONI: nascoste finché la scheda Google non è verificata e non ci sono le prime 3 recensioni reali
+
   <section style="margin-top:130px;background:#0D2328;color:#F7F3EE">
     <div style="max-width:1320px;margin:0 auto;padding:96px 32px;display:flex;flex-direction:column;gap:32px">
       <div class="rv rv-up" style="display:flex;flex-direction:column;gap:14px"><span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#8FB0B5">I PAZIENTI</span><h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(36px,4.6vw,64px);line-height:1.04">Cosa dicono <span class="hl-d">di me</span></h2></div>
@@ -338,6 +342,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     </div>
   </section>
 
+  -->
   <section id="faq" style="max-width:920px;width:100%;margin:0 auto;padding:130px 32px 0;display:flex;flex-direction:column;gap:28px">
     <div class="rv rv-up" style="display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center"><span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">DOMANDE FREQUENTI</span><h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(36px,4.6vw,64px);line-height:1.04">Prima di <span class="hl">prenotare</span></h2></div>
     <div class="rv rv-up d1" style="border-top:2px solid #0D2328;display:flex;flex-direction:column">
@@ -554,7 +559,16 @@ class Component extends DCLogic {
           if (!ok) { msg.style.color = '#F2B8B5'; msg.textContent = 'Controlla i campi evidenziati e la casella della privacy.'; return; }
           const btn = fm.querySelector('button[type=submit]'); const label = btn.textContent;
           btn.disabled = true; btn.textContent = 'INVIO…'; msg.textContent = '';
-          const g = (n) => (fm.querySelector('[name=' + n + ']') || {}).value || ''; if (g('sito_web')) return; const bodyTxt = 'Nome: ' + g('nome') + '\nTelefono: ' + g('telefono') + '\nEmail: ' + g('email') + '\n\n' + g('messaggio'); setTimeout(() => { btn.disabled = false; btn.textContent = label; msg.style.color = '#C9D7D9'; msg.textContent = '✓ Si apre la tua app email con il messaggio pronto: premi Invia.'; window.location.href = 'mailto:mattiamolise.osteo@gmail.com?subject=' + encodeURIComponent('Richiesta dal sito') + '&body=' + encodeURIComponent(bodyTxt); }, 400);
+          const g = (n) => ((fm.querySelector('[name=' + n + ']') || {}).value || '').trim();
+          const done = (ok, t) => { btn.disabled = false; btn.textContent = label; msg.style.color = ok ? '#C9D7D9' : '#F2B8B5'; msg.textContent = t; };
+          if (g('sito_web')) { done(true, '✓ Messaggio inviato. Ti rispondo appena possibile.'); return; }
+          const KEY = '9c3a72e6-168f-41bf-a1b0-f792123aa53f';
+          const bodyTxt = 'Nome: ' + g('nome') + '\nTelefono: ' + g('telefono') + '\nEmail: ' + g('email') + '\n\n' + g('messaggio');
+          if (!KEY) { done(true, '✓ Si apre la tua app email con il messaggio pronto: premi Invia.'); window.location.href = 'mailto:mattiamolise.osteo@gmail.com?subject=' + encodeURIComponent('Richiesta dal sito') + '&body=' + encodeURIComponent(bodyTxt); return; }
+          fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ access_key: KEY, subject: 'Nuovo messaggio dal sito · ' + g('nome'), from_name: 'Sito Mattia Molise', name: g('nome'), email: g('email'), telefono: g('telefono'), message: g('messaggio'), botcheck: '' }) })
+            .then((r) => r.json()).then((j) => { if (j && j.success) { fm.reset(); done(true, '✓ Messaggio inviato. Ti rispondo appena possibile.'); } else { throw new Error(); } })
+            .catch(() => done(false, 'Invio non riuscito. Riprova o scrivimi su WhatsApp al 331 357 0472.'));
         };
         fm.addEventListener('submit', sub);
         return () => fm.removeEventListener('submit', sub);

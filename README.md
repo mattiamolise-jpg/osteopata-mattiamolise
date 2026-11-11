@@ -11,7 +11,7 @@ Sito di **Mattia Molise**, osteopata e chinesiologo a Casalecchio di Reno e Bolo
 ## Studi
 
 - **Casalecchio di Reno**, dentro One Gym, Via Verga 3/12, 40033 · dal lunedì al sabato, su appuntamento
-- **Bologna**, Via Corticella 216/2 · dal lunedì al venerdì, su appuntamento
+- **Bologna**, Via Corticella 216/2, 40128 · dal lunedì al venerdì, su appuntamento
 
 ## Contatti
 

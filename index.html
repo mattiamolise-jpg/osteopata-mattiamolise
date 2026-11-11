@@ -100,7 +100,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
 .btn{transition:background-color .2s ease,color .2s ease}
 .btn:hover{background:#0D2328 !important;color:#F7F3EE !important}
 .btn-l:hover{background:#F7F3EE !important;color:#0D2328 !important}
-.fab{display:none}
+.fab{display:none}.fab{transition:opacity .3s ease,transform .3s ease}.fab.fab-hide{opacity:0;transform:translateY(24px);pointer-events:none}
 @media (max-width:900px){.s1{height:auto !important}.s1-stick{position:relative !important;height:auto !important;padding:80px 0}.s1-track{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}.s1-card{width:82vw;scroll-snap-align:start}.s1-bar{display:none}.tl-line{left:64px !important;top:96px !important}.tl-item{grid-template-columns:64px minmax(0,1fr);gap:20px 24px}.tl-item > .tl-dot{grid-column:1;grid-row:1;justify-self:start}.tl-item > .tl-card{grid-column:2;grid-row:1;text-align:left !important;padding:0 !important}.tl-item > .tl-media{grid-column:2;grid-row:2}.sticky-col{position:static !important}.px{translate:none !important;scale:none !important}#approccio > *,#chi-sono > *{grid-column:1 / -1 !important;margin-left:0 !important}.navlinks{display:none !important}.fab{display:flex !important}.topserv{display:none !important}.badge{display:none !important}.m-hide{display:none !important}.m-show{display:inline !important}.brand-sub{font-size:8.5px !important;letter-spacing:.14em !important}.hero-id{flex-direction:column;align-items:flex-start !important;gap:14px !important}.hero-id .asm-box{width:76px !important;height:76px !important}.hero-id > span{font-size:16px !important}.hero-card{padding:26px 22px !important}.rv-l.pre{transform:translate3d(-40px,0,0)}.rv-r.pre{transform:translate3d(40px,0,0)}.rv-up.pre{transform:translate3d(0,40px,0)}.ftr{padding-bottom:84px}.pv-shade{background:linear-gradient(180deg,rgba(13,35,40,.55) 0%,rgba(13,35,40,.82) 40%,rgba(13,35,40,.9) 100%) !important}}
 @media (prefers-reduced-motion:reduce){.tl-card,.tl-media,.tl-dot{transition:none !important;opacity:1 !important;transform:none !important}.hl,.hl-d{transition:none !important;background-size:100% 100% !important}.ph::before,.ph-h::after{transition:none !important}.px{translate:none !important;scale:none !important}.rv,.rv.pre{transition:none !important;opacity:1 !important;transform:none !important}a:hover .go,.cue,.cue:hover{animation:none !important}}
 </style>
@@ -112,8 +112,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
 
   <div style="background:#ECE6DF;color:#0D2328;font-size:13px;border-bottom:1px solid #DED4C9">
     <div style="max-width:1320px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <span><span class="m-hide">Casalecchio di Reno e Bologna · </span><a class="ilink" href="tel:+393313570472" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>331 357 0472</a><span class="m-hide"> · <a class="ilink" href="mailto:mattiamolise.osteo@gmail.com" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 6.5 8.2 6.3 8.2-6.3"/></svg>mattiamolise.osteo@gmail.com</a> · <a class="ilink" href="https://www.instagram.com/osteopata_mattiamolise/" aria-label="Instagram" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a></span><span class="m-show" style="display:none"> · Casalecchio e Bologna</span></span>
-      <span class="topserv" style="display:flex;gap:28px"><span>Osteopatia</span><span>Chinesiologia</span><span>Check posturale</span></span>
+      <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="m-hide">Casalecchio di Reno e Bologna</span><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><a class="ilink" href="tel:+393313570472" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>331 357 0472</a><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><span class="m-hide"><a class="ilink" href="mailto:mattiamolise.osteo@gmail.com" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 6.5 8.2 6.3 8.2-6.3"/></svg>mattiamolise.osteo@gmail.com</a></span><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><span class="m-hide"><a class="ilink" href="https://www.instagram.com/osteopata_mattiamolise/" aria-label="Instagram" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a></span><span class="m-show" style="display:none"> · Casalecchio e Bologna</span></span>
     </div>
   </div>
 
@@ -131,20 +130,14 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     </div>
   </header>
 
-  <section id="top" style="position:relative;min-height:760px;overflow:hidden;display:flex;align-items:center">
+  <section id="top" style="position:relative;min-height:640px;overflow:hidden;display:flex;align-items:center">
     <div class="ph ph-d px" data-speed="0.25" data-scale="0.06" style="position:absolute;inset:-60px 0;border-radius:0;align-items:flex-start;justify-content:flex-end;padding:80px 28px"><img class="pimg" src="assets/img/01-hero.jpg" alt="Atleta in corsa in palestra" fetchpriority="high" decoding="async"></div>
     <svg aria-hidden="true" viewBox="0 0 1440 180" preserveAspectRatio="none" style="position:absolute;left:0;bottom:-1px;width:100%;height:150px"><path d="M0 180 L0 178 C 620 178 980 150 1180 90 C 1300 54 1380 18 1440 0 L1440 180 Z" fill="#ECE6DF"></path></svg>
-    <div style="position:relative;max-width:1320px;width:100%;margin:0 auto;padding:72px 32px 120px">
-      <div class="rv rv-l onload px hero-card" data-speed="-0.12" style="max-width:620px;background:#ECE6DF;border:2px solid #0D2328;border-radius:8px;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:24px">
-        <div class="hero-id" style="display:flex;align-items:center;gap:22px"><div class="asm-box" aria-hidden="true" style="width:120px;height:120px;flex:none;opacity:.6">
-          <img class="rv asm onload w9" src="assets/img/asm-v2-cavi.svg" alt="">
-          <img class="rv rv-l asm onload w9" src="assets/img/asm-v2-aste1.svg" alt="">
-          <img class="rv rv-r asm onload w10" src="assets/img/asm-v2-aste2.svg" alt="">
-          <img class="rv rv-up asm onload w13" src="assets/img/asm-v2-aste3.svg" alt="">
-          <img class="rv asm onload w16" src="assets/img/asm-v2-nodi.svg" alt="">
-        </div><span style="font-size:20px;line-height:1.3">Osteopata e chinesiologo,<br>Casalecchio di Reno e Bologna</span></div>
-        <h1 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-.015em">Torna a <span class="hl">muoverti</span> senza <span class="hl">pensarci.</span></h1>
-        <p style="margin:0;font-size:18px;line-height:1.65;color:#0D2328">Se il dolore torna sempre, o non sai da dove parta, ti aiuto a capirlo. Valutazione, trattamento manuale e, quando serve, esercizio: un unico percorso. <b>Perché capire da dove nasce il dolore è il primo passo per lasciarlo indietro.</b></p>
+    <div style="position:relative;max-width:1320px;width:100%;margin:0 auto;padding:48px 32px 110px">
+      <div class="rv rv-l onload px hero-card" data-speed="-0.12" style="max-width:660px;background:#ECE6DF;border:2px solid #0D2328;border-radius:8px;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:24px">
+        <div class="hero-id" style="display:flex;align-items:center;gap:22px"><span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">CASALECCHIO DI RENO · BOLOGNA</span></div>
+        <h1 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(40px,4.6vw,66px);line-height:1.06;letter-spacing:-.015em">Torna a <span class="hl">muoverti</span><br>senza <span class="hl">pensarci.</span></h1>
+        <p style="margin:0;font-size:18px;line-height:1.65;color:#0D2328">Se il dolore torna sempre o non sai da dove parta, ti aiuto a capirlo: valutazione, trattamento manuale e, quando serve, esercizio.</p>
         <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
           <a class="btn" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:15px 24px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA</a>
           <a href="#approccio" style="color:#0D2328;text-decoration:none;font-family:'Brown',sans-serif;font-size:22px"><span class="go">→</span>&nbsp; Scopri di più</a>
@@ -154,12 +147,12 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     <a href="#approccio" class="cue" aria-label="Scorri alla sezione successiva" style="position:absolute;left:50%;bottom:44px;margin-left:-26px;width:52px;height:52px;border-radius:50%;border:1.5px solid #F7F3EE;color:#F7F3EE;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:22px">↓</a>
   </section>
 
-  <section id="approccio" style="max-width:1320px;width:100%;margin:0 auto;padding:72px 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:48px 72px;align-items:end">
+  <section id="approccio" style="max-width:1320px;width:100%;margin:0 auto;padding:72px 32px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:48px 72px;align-items:start">
     <div class="rv rv-l" style="display:flex;flex-direction:column;gap:22px">
-      <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">OSTEOPATIA A CASALECCHIO DI RENO</span>
+      <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">OSTEOPATIA A CASALECCHIO DI RENO E BOLOGNA</span>
       <h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(36px,4.6vw,64px);line-height:1.06;letter-spacing:-.01em">Il punto che fa male non è sempre <span class="hl">quello</span> da cui nasce il problema.</h2>
     </div>
-    <div class="rv rv-r" style="display:flex;flex-direction:column;gap:18px">
+    <div class="rv rv-r" style="display:flex;flex-direction:column;gap:18px;padding-top:44px">
       <p style="margin:0;font-size:17px;line-height:1.7">Non cerchi una soluzione veloce: cerchi di capire cosa succede al tuo corpo, con qualcuno che rispetta il tuo tempo e la tua storia.</p>
       <p style="margin:0;font-size:17px;line-height:1.7">Per questo ogni percorso segue quattro tappe, dalla prima visita fino a quando non hai più bisogno di me.</p>
     </div>
@@ -201,24 +194,24 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     </article>
   </section>
 
-  <section id="cosa-tratto" class="s1" style="margin-top:120px;position:relative;background:#33474C;color:#F7F3EE">
+  <section id="cosa-tratto" class="s1" style="margin-top:120px;position:relative;background:#1F4E5A;color:#F7F3EE">
     <div class="s1-stick" style="position:sticky;top:0;height:100vh;overflow:hidden">
-    <div class="ph" style="position:absolute;inset:0;border-radius:0;align-items:flex-start;justify-content:flex-end;padding:20px 28px;background-color:#33474C"><img class="pimg" src="assets/img/06-cammino.jpg" alt="Passo di camminata" loading="lazy" decoding="async"></div>
-    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,35,40,.75),rgba(13,35,40,.35))"></div>
+    <img src="assets/img/logo-v2-chiaro.svg" alt="" aria-hidden="true" style="position:absolute;right:-160px;top:50%;translate:0 -50%;width:820px;opacity:.08;pointer-events:none">
     <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;gap:40px;padding-top:60px">
       <div class="s1-track" style="display:flex;gap:28px;align-items:stretch;padding:0 6vw;will-change:transform">
         <div style="flex:none;width:min(520px,82vw);display:flex;flex-direction:column;justify-content:center;gap:22px;padding-right:40px">
           <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#C9D7D9">COSA TRATTO · CASALECCHIO E BOLOGNA</span>
           <h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(40px,5vw,72px);line-height:1.02">Ogni dolore <span class="hl-d">ha una storia.</span></h2>
           <p style="margin:0;font-size:18px;line-height:1.6;font-weight:700">Che sia nuovo o che torni da anni, mi prendo il tempo di capire la tua storia e cosa alimenta il fastidio.</p>
-          <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap"><a class="btn btn-l" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:14px 22px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA</a><span style="font-size:14px;color:#C9D7D9">Continua a scorrere →</span></div>
+          <div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap"><a class="btn btn-l" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="background:#F7F3EE;color:#0D2328;text-decoration:none;padding:14px 22px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA</a><span style="font-size:14px;color:#C9D7D9">Continua a scorrere →</span></div>
         </div>
         <article class="s1-card"><div class="ph" style="aspect-ratio:4/3"><img class="pimg" src="assets/img/07-schiena.jpg" alt="Mal di schiena lombare" loading="lazy" decoding="async"></div><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">01</span><h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:30px;line-height:1.05">Schiena e sciatalgia</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#E6EDEE">Mal di schiena e dolore che scende lungo la gamba: cerco cosa sovraccarica la zona, non solo dove fa male.</p><a href="p-schiena.html" style="color:#F7F3EE;text-decoration:none;font-family:'Brown',sans-serif;font-size:19px"><span class="go">→</span>&nbsp; Approfondisci</a></article>
-        <article class="s1-card"><div class="ph" style="aspect-ratio:4/3"><img class="pimg" src="assets/img/08-collo.jpg" alt="Trattamento del collo" loading="lazy" decoding="async"></div><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">02</span><h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:30px;line-height:1.05">Collo e mal di testa</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#E6EDEE">Cervicale, rigidità e cefalea tensiva: lavoro su collo, spalle e mandibola e su cosa li scatena nella tua giornata.</p><a href="p-collo.html" style="color:#F7F3EE;text-decoration:none;font-family:'Brown',sans-serif;font-size:19px"><span class="go">→</span>&nbsp; Approfondisci</a></article>
+        <article class="s1-card"><div class="ph" style="aspect-ratio:4/3"><img class="pimg" src="assets/img/08-collo.jpg" alt="Trattamento del collo" loading="lazy" decoding="async"></div><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">02</span><h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:30px;line-height:1.05">Collo, mal di testa e mandibola</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#E6EDEE">Cervicale, rigidità e cefalea tensiva: lavoro su collo, spalle e mandibola e su cosa li scatena nella tua giornata.</p><a href="p-collo.html" style="color:#F7F3EE;text-decoration:none;font-family:'Brown',sans-serif;font-size:19px"><span class="go">→</span>&nbsp; Approfondisci</a></article>
         <article class="s1-card"><div class="ph" style="aspect-ratio:4/3"><img class="pimg" src="assets/img/09-ginocchio.jpg" alt="Ginocchio con bendaggio" loading="lazy" decoding="async"></div><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">03</span><h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:30px;line-height:1.05">Spalla, anca e ginocchio</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#E6EDEE">Valuto anche le articolazioni vicine: il ginocchio, per esempio, risente spesso di anca e caviglia.</p><a href="p-articolazioni.html" style="color:#F7F3EE;text-decoration:none;font-family:'Brown',sans-serif;font-size:19px"><span class="go">→</span>&nbsp; Approfondisci</a></article>
         <article class="s1-card"><div class="ph" style="aspect-ratio:4/3"><img class="pimg" src="assets/img/10-scrivania.jpg" alt="Tensione al collo dopo ore alla scrivania" loading="lazy" decoding="async" style="object-position:45% 30%"></div><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">04</span><h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:30px;line-height:1.05">Postura e scrivania</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#E6EDEE">Tante ore seduto? Riduco la tensione e ti do consigli concreti su postazione, pause e movimento.</p><a href="p-postura.html" style="color:#F7F3EE;text-decoration:none;font-family:'Brown',sans-serif;font-size:19px"><span class="go">→</span>&nbsp; Approfondisci</a></article>
         <article class="s1-card"><div class="ph" style="aspect-ratio:4/3"><img class="pimg" src="assets/img/11-sport.jpg" alt="Corsa all’aperto" loading="lazy" decoding="async"></div><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">05</span><h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:30px;line-height:1.05">Sport e infortuni</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#E6EDEE">Ogni giorno con atleti di pallanuoto e basket: sovraccarichi, contratture, distorsioni e ritorno in campo.</p><a href="p-sport.html" style="color:#F7F3EE;text-decoration:none;font-family:'Brown',sans-serif;font-size:19px"><span class="go">→</span>&nbsp; Approfondisci</a></article>
-        <article class="s1-card"><div class="ph" style="aspect-ratio:4/3"><img class="pimg" src="assets/img/12-terza-eta.jpg" alt="Mobilità della spalla dopo i 60 anni" loading="lazy" decoding="async"></div><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">06</span><h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:30px;line-height:1.05">Gravidanza e terza età</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#E6EDEE">Delicatezza in gravidanza e nel post-parto, d’accordo con il ginecologo; mobilità e autonomia dopo i 60 anni.</p><a href="cosa-tratto.html" style="color:#F7F3EE;text-decoration:none;font-family:'Brown',sans-serif;font-size:19px"><span class="go">→</span>&nbsp; Tutti i disturbi</a></article>
+        <article class="s1-card"><div class="ph" style="aspect-ratio:4/3"><img class="pimg" src="assets/img/12-terza-eta.jpg" alt="Mobilità della spalla dopo i 60 anni" loading="lazy" decoding="async"></div><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">06</span><h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:30px;line-height:1.05">Gravidanza e terza età</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#E6EDEE">Delicatezza in gravidanza e nel post-parto, d’accordo con il ginecologo; mobilità e autonomia dopo i 60 anni.</p><a href="p-gravidanza.html" style="color:#F7F3EE;text-decoration:none;font-family:'Brown',sans-serif;font-size:19px"><span class="go">→</span>&nbsp; Approfondisci</a></article>
+        <a href="cosa-tratto.html" class="s1-all" style="flex:none;width:260px;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:28px;border:1px dashed rgba(201,215,217,.45);border-radius:8px;color:#F7F3EE;text-decoration:none"><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5">E ALTRO</span><span style="font-family:'Brown',sans-serif;font-size:28px;line-height:1.1"><span class="go">→</span>&nbsp; Tutti i disturbi</span><span style="font-size:15px;line-height:1.5;color:#C9D7D9">Disturbi viscerali, sindrome premestruale, tensioni da stress e altro.</span></a><span aria-hidden="true" style="flex:none;width:calc(6vw - 28px)"></span>
       </div>
       <div class="s1-bar" aria-hidden="true" style="margin:0 6vw;height:2px;background:rgba(201,215,217,.25)"><div class="s1-fill" style="height:100%;width:0;background:#8FB0B5"></div></div>
     </div>
@@ -230,16 +223,15 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     <div class="rv rv-up" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center">
       <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">I SERVIZI</span>
       <h2 style="margin:0;max-width:980px;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(38px,5vw,70px);line-height:1.06;letter-spacing:-.015em">Più di un trattamento: <span class="hl">un percorso</span> costruito su di te.</h2>
-      <a class="btn" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:14px 22px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA</a>
     </div>
 
     <article class="svc" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:72px;align-items:center">
-      <div class="ph ph-h rv rv-l px" data-speed="0.1" data-cap="La valutazione" style="aspect-ratio:3/2"><span class="svc-cur" aria-hidden="true">Scopri</span><img class="pimg" src="assets/img/13-osteopatia.jpg" alt="Trattamento osteopatico della coscia" loading="lazy" decoding="async"></div>
+      <div class="ph ph-h rv rv-l px" data-speed="0.04" data-cap="La valutazione" style="aspect-ratio:3/2"><span class="svc-cur" aria-hidden="true">Scopri</span><img class="pimg" src="assets/img/13-osteopatia.jpg" alt="Trattamento osteopatico della coscia" loading="lazy" decoding="async"></div>
       <div class="rv rv-r px" data-speed="-0.05" style="display:flex;flex-direction:column;gap:18px">
         <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">OSTEOPATIA · 60 MIN</span>
         <h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:clamp(34px,3.8vw,52px);line-height:1.05"><span class="svc-t">Prima visita e trattamento osteopatico</span></h3>
         <span style="font-family:'Brown',sans-serif;font-weight:300;font-size:24px;line-height:1.3">Capire da dove nasce il dolore, poi trattarlo.</span>
-        <p style="margin:0;font-size:17px;line-height:1.7;font-weight:700">Ascolto la tua storia, valuto come ti muovi e con test specifici cerco l'origine del problema. Poi il primo trattamento, con tecniche manuali adatte a te. Alla fine ti dico quante sedute prevedo e ogni quanto.</p>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#3D4F52">Ascolto la tua storia, valuto come ti muovi e con test specifici cerco l'origine del problema. Poi il primo trattamento, con tecniche manuali adatte a te. Alla fine ti dico quante sedute prevedo e ogni quanto.</p>
         <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
           <a class="btn svc-btn" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20prima%20visita" style="background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:14px 22px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA</a>
           <a class="svc-link" href="s-osteopatia.html" style="color:#0D2328;text-decoration:none;font-family:'Brown',sans-serif;font-size:20px"><span class="go">→</span>&nbsp; Scopri l’osteopatia</a>
@@ -250,24 +242,24 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     <article class="svc" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:72px;align-items:center">
       <div class="rv rv-l px" data-speed="-0.05" style="display:flex;flex-direction:column;gap:18px;order:1">
         <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">CHINESIOLOGIA · 60 MIN · SOLO A CASALECCHIO</span>
-        <h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:clamp(34px,3.8vw,52px);line-height:1.05"><span class="svc-t">Recupero funzionale ed educazione posturale</span></h3>
+        <h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:clamp(34px,3.8vw,52px);line-height:1.05"><span class="svc-t">Recupero funzionale</span></h3>
         <span style="font-family:'Brown',sans-serif;font-weight:300;font-size:24px;line-height:1.3">Tornare alle tue attività, con il movimento giusto.</span>
-        <p style="margin:0;font-size:17px;line-height:1.7;font-weight:700">Come chinesiologo costruisco un programma di esercizio su misura e ti insegno a muoverti meglio nella vita di tutti i giorni. Lo adatto seduta dopo seduta, con l'obiettivo di ripristinare le funzioni della vita quotidiana e riportarti alle tue attività o al tuo sport.</p>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#3D4F52">Come chinesiologo costruisco un programma di esercizi su misura e lo adatto seduta dopo seduta, per riportarti alle tue attività o al tuo sport.</p>
         <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
           <a class="btn svc-btn" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20informazioni%20sul%20recupero%20funzionale" style="background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:14px 22px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA</a>
           <a class="svc-link" href="s-recupero.html" style="color:#0D2328;text-decoration:none;font-family:'Brown',sans-serif;font-size:20px"><span class="go">→</span>&nbsp; Scopri il recupero funzionale</a>
         </div>
       </div>
-      <div class="ph ph-h rv rv-r px" data-speed="0.1" data-cap="Esercizio su misura" style="aspect-ratio:3/2;order:2"><span class="svc-cur" aria-hidden="true">Scopri</span><img class="pimg" src="assets/img/14-recupero.jpg" alt="Esercizio di recupero guidato" loading="lazy" decoding="async"></div>
+      <div class="ph ph-h rv rv-r px" data-speed="0.04" data-cap="Esercizio su misura" style="aspect-ratio:3/2;order:2"><span class="svc-cur" aria-hidden="true">Scopri</span><img class="pimg" src="assets/img/14-recupero.jpg" alt="Esercizio di recupero guidato" loading="lazy" decoding="async"></div>
     </article>
 
     <article class="svc" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:72px;align-items:center">
-      <div class="ph ph-h rv rv-l px" data-speed="0.1" data-cap="Il check posturale" style="aspect-ratio:3/2"><span class="svc-cur" aria-hidden="true">Scopri</span><img class="pimg" src="assets/img/15-check.jpg" alt="Momento di respirazione" loading="lazy" decoding="async"></div>
+      <div class="ph ph-h rv rv-l px" data-speed="0.04" data-cap="Il check posturale" style="aspect-ratio:3/2"><span class="svc-cur" aria-hidden="true">Scopri</span><img class="pimg" src="assets/img/15-check.jpg" alt="Momento di respirazione" loading="lazy" decoding="async"></div>
       <div class="rv rv-r px" data-speed="-0.05" style="display:flex;flex-direction:column;gap:18px">
         <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">PREVENZIONE · 60 MIN</span>
         <h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:clamp(34px,3.8vw,52px);line-height:1.05"><span class="svc-t">Check posturale</span></h3>
         <span style="font-family:'Brown',sans-serif;font-weight:300;font-size:24px;line-height:1.3">Una fotografia di come stai, anche senza dolore.</span>
-        <p style="margin:0;font-size:17px;line-height:1.7;font-weight:700">Valuto postura, mobilità e il modo in cui ti muovi, e ti spiego cosa si sta irrigidendo prima che diventi un fastidio. È il modo più semplice per non aspettare che torni il dolore.</p>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#3D4F52">Valuto postura, mobilità e il modo in cui ti muovi, e ti spiego cosa si sta irrigidendo prima che diventi un fastidio. È il modo più semplice per non aspettare che torni il dolore.</p>
         <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
           <a class="btn svc-btn" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20un%20check%20posturale" style="background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:14px 22px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA</a>
           <a class="svc-link" href="s-check.html" style="color:#0D2328;text-decoration:none;font-family:'Brown',sans-serif;font-size:20px"><span class="go">→</span>&nbsp; Scopri il check posturale</a>
@@ -284,30 +276,25 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
         <div style="position:relative;max-width:640px;padding:56px clamp(28px,6vw,96px);display:flex;flex-direction:column;gap:22px">
           <img src="assets/img/logo-v2-chiaro.svg" alt="" aria-hidden="true" style="width:96px;height:auto">
           <h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(40px,5vw,72px);line-height:1.02;letter-spacing:-.015em">Sessanta minuti <span class="hl-d">per capire.</span></h2>
-          <p style="margin:0;font-size:18px;line-height:1.65">Alla prima visita mi racconti cosa succede, io ti ascolto, ti valuto e facciamo il primo trattamento. Esci sapendo cosa hai e qual è il piano. Vieni con abiti comodi: leggings o pantaloncini e una maglietta.</p>
+          <p style="margin:0;font-size:18px;line-height:1.65">Alla prima visita mi racconti cosa succede, io ti ascolto, ti valuto e facciamo il primo trattamento. Esci con un quadro chiaro: cosa alimenta il dolore e qual è il piano. Vieni con abiti comodi: leggings o pantaloncini e una maglietta.</p>
           <a class="btn btn-l" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20prima%20visita" style="align-self:flex-start;background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:15px 24px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA LA PRIMA VISITA</a>
         </div>
       </div>
       <div id="prezzi" style="display:flex;flex-direction:column;gap:32px">
         <div class="rv rv-up" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px">
           <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#8FB0B5">PREZZI</span><h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(36px,4.6vw,64px);line-height:1.04">Chiari <span class="hl-d">fin da subito.</span></h2></div>
-          <p style="margin:0;max-width:440px;font-size:16px;line-height:1.6;color:#C9D7D9">Ogni seduta dura 60 minuti ed è sempre con me, dall'inizio alla fine. Il prezzo è lo stesso per la prima visita, il trattamento e il check posturale. <a href="contatti.html" style="color:#C9D7D9;white-space:nowrap">Tutti i contatti →</a></p>
+          <p style="margin:0;max-width:440px;font-size:16px;line-height:1.6;color:#C9D7D9">Ogni seduta dura 60 minuti ed è sempre con me, dall'inizio alla fine. Il prezzo è lo stesso per la prima visita, il trattamento e il check posturale. <a href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="color:#C9D7D9;white-space:nowrap">Prenota su WhatsApp →</a></p>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
         <div class="rv rv-up " style="background:rgba(31,78,90,.35);border:1.5px solid rgba(201,215,217,.35);border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:14px">
           <span style="font-size:13px;font-weight:700;letter-spacing:.2em;color:#8FB0B5">SEDUTA · 60 MIN</span>
           <span style="font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(56px,6vw,84px);line-height:.9;letter-spacing:-.02em;font-feature-settings:'tnum'">65<span style="font-size:.38em;letter-spacing:0"> €</span></span>
-          <p style="margin:0;font-size:16px;line-height:1.6;color:#C9D7D9">Prima visita, trattamento osteopatico, recupero funzionale o check posturale.</p>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#C9D7D9">Prima visita, trattamento osteopatico o check posturale.</p>
         </div>
         <div class="rv rv-up d1" style="border:1.5px solid rgba(201,215,217,.35);border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:14px">
           <span style="font-size:13px;font-weight:700;letter-spacing:.2em;color:#8FB0B5">SOCI ONE GYM</span>
           <span style="font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(56px,6vw,84px);line-height:.9;letter-spacing:-.02em;font-feature-settings:'tnum'">60<span style="font-size:.38em;letter-spacing:0"> €</span></span>
           <p style="margin:0;font-size:16px;line-height:1.6;color:#C9D7D9">Lo stesso servizio, per chi è iscritto alla palestra. Basta dirlo al momento della prenotazione.</p>
-        </div>
-        <div class="rv rv-up d2" style="border:1.5px solid rgba(201,215,217,.35);border-radius:8px;padding:32px;display:flex;flex-direction:column;gap:14px">
-          <span style="font-size:13px;font-weight:700;letter-spacing:.2em;color:#8FB0B5">PERCORSO · 5 SEDUTE</span>
-          <span style="font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(56px,6vw,84px);line-height:.9;letter-spacing:-.02em;font-feature-settings:'tnum'">300<span style="font-size:.38em;letter-spacing:0"> €</span></span>
-          <p style="margin:0;font-size:16px;line-height:1.6;color:#C9D7D9">Cinque sedute da usare nel tuo percorso, 60 € l’una invece di 65 €.</p>
         </div>
         </div>
       </div>
@@ -322,12 +309,12 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     <div class="sticky-col" style="grid-column:8 / span 5;display:flex;flex-direction:column;gap:16px;padding-top:12px">
       <div class="rv rv-r" style="display:flex;flex-direction:column;gap:16px">
         <h3 style="margin:0;font-family:'Brown',sans-serif;font-weight:400;font-size:40px;line-height:1.05">Mattia Molise</h3>
-        <p style="margin:0;font-size:17px;line-height:1.7;font-weight:700">Mi sono laureato in Scienze Motorie e diplomato in osteopatia. Lavoro ogni giorno con atleti di pallanuoto e basket, e con chi il dolore lo sente alla scrivania, in gravidanza o dopo i 60 anni.</p>
+        <p style="margin:0;font-size:17px;line-height:1.7">Mi sono laureato in Scienze Motorie e diplomato in osteopatia. Lavoro ogni giorno con atleti di pallanuoto e basket, e con chi il dolore lo sente nella vita di tutti i giorni: al lavoro, alla scrivania, durante lo sport, in gravidanza o dopo i 60 anni.</p>
       </div>
     <ul class="rv rv-r d1" style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;border-top:2px solid #0D2328">
       <li style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid #DED4C9;font-size:17px"><span>Laurea in Scienze Motorie</span><span style="font-family:'Brown',sans-serif;font-weight:700;font-feature-settings:'tnum'">2021</span></li>
+      <li style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid #DED4C9;font-size:17px"><span>Massaggio sportivo · ATS</span><span style="font-family:'Brown',sans-serif;font-weight:700;font-feature-settings:'tnum'">2023</span></li>
       <li style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid #DED4C9;font-size:17px"><span>Diploma in Osteopatia</span><span style="font-family:'Brown',sans-serif;font-weight:700;font-feature-settings:'tnum'">2026</span></li>
-      <li style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid #DED4C9;font-size:17px"><span>Preparatore atletico e massaggiatore sportivo</span><span style="color:#3D4F52">pallanuoto e basket</span></li>
       <li style="padding:20px 0 0"><a href="chi-sono.html#percorso" style="color:#0D2328;text-decoration:none;font-family:'Brown',sans-serif;font-size:20px"><span class="go">→</span>&nbsp; Il mio percorso</a></li>
     </ul>
     </div>
@@ -354,7 +341,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
       
         <div style="border-bottom:1px solid #DED4C9">
           <button type="button" class="mm-faq-q" aria-expanded="false" style="width:100%;background:none;border:0;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;cursor:pointer;text-align:left;color:#0D2328;font-family:'Brown',sans-serif;font-size:22px">Quanto costa una seduta?<span class="mm-sign" style="color:#1F4E5A;font-size:26px;flex:none">+</span></button>
-          <p hidden style="margin:0 0 22px;font-size:17px;line-height:1.65;color:#3D4F52">Ogni seduta da 60 minuti costa 65 €, sia la prima visita sia le successive o il check posturale. Per i soci One Gym 60 €. Il percorso da 5 sedute costa 300 €.</p>
+          <p hidden style="margin:0 0 22px;font-size:17px;line-height:1.65;color:#3D4F52">Ogni seduta da 60 minuti costa 65 €, sia la prima visita sia le successive o il check posturale. Per i soci One Gym 60 €.</p>
         </div>
       
         <div style="border-bottom:1px solid #DED4C9">
@@ -392,7 +379,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
         <span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#8FB0B5">DOVE SONO</span>
         <h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(36px,4.6vw,64px);line-height:1.04">Due studi, <span class="hl-d">Casalecchio e Bologna</span></h2>
         <div style="display:flex;flex-direction:column;border-top:1px solid #2A4146">
-          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:18px 0;border-bottom:1px solid #2A4146"><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5;padding-top:4px">01</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Brown',sans-serif;font-size:24px">Casalecchio di Reno · dentro One Gym</span><span style="font-size:16px;line-height:1.55;color:#C9D7D9">Via Verga 3/12, 40033 Casalecchio di Reno (BO) · tutti i servizi, compreso il recupero funzionale · dal lunedì al sabato, su appuntamento</span></div></div>
+          <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:18px 0;border-bottom:1px solid #2A4146"><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5;padding-top:4px">01</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Brown',sans-serif;font-size:24px">Casalecchio di Reno · dentro One Gym</span><span style="font-size:16px;line-height:1.55;color:#C9D7D9">Via Verga 3/12, 40033 Casalecchio di Reno (BO) · tutti i servizi, compreso il recupero funzionale</span><span style="font-size:16px;line-height:1.55;color:#C9D7D9">Dal lunedì al sabato, su appuntamento</span></div></div>
           <div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;padding:18px 0;border-bottom:1px solid #2A4146"><span style="font-family:'Brown',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em;color:#8FB0B5;padding-top:4px">02</span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-family:'Brown',sans-serif;font-size:24px">Bologna · Corticella</span><span style="font-size:16px;line-height:1.55;color:#C9D7D9">Via Corticella 216/2, 40128 Bologna · in uno studio medico · osteopatia e check posturale</span><span style="font-size:16px;line-height:1.55;color:#C9D7D9">Dal lunedì al venerdì, su appuntamento</span></div></div>
         </div>
         <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:#8FB0B5">TELEFONO E WHATSAPP</span><a class="ilink" href="tel:+393313570472" style="font-family:'Brown',sans-serif;font-weight:700;font-size:22px;color:#F7F3EE;text-decoration:none;font-feature-settings:'tnum'"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>331 357 0472</a><span style="font-size:14px;color:#C9D7D9">Quando prenoti, dimmi in quale studio preferisci venire.</span></div>
@@ -424,7 +411,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     <div style="max-width:1320px;margin:0 auto;padding:18px 32px 32px;border-top:1px solid #DED4C9;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#3D4F52"><span>© 2026 Mattia Molise · P.IVA 04061291201</span><a href="privacy.html" style="color:#3D4F52">Privacy e cookie</a></div>
   </footer>
 
-  <a class="fab" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:30;justify-content:center;background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:15px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.14em;box-shadow:0 8px 24px rgba(13,35,40,.3)">SCRIVIMI SU WHATSAPP</a>
+  <a class="fab" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:30;justify-content:center;background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:15px;border-radius:999px;border:1.5px solid rgba(247,243,238,.7);font-size:13px;font-weight:700;letter-spacing:.14em;box-shadow:0 8px 24px rgba(13,35,40,.3)">SCRIVIMI SU WHATSAPP</a>
 </div>
 
 <script>
@@ -440,7 +427,9 @@ class Component extends DCLogic {
       const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const hdr = document.querySelector('.hdr');
       const topSec = document.querySelector('#top');
-      this._onScroll = () => { if (hdr && topSec) hdr.classList.toggle('compact', topSec.getBoundingClientRect().top < -80); };
+      const fab = document.querySelector('.fab'); const heroHome = topSec && topSec.querySelector('.hero-card');
+      this._onScroll = () => { if (hdr && topSec) hdr.classList.toggle('compact', topSec.getBoundingClientRect().top < -80); if (fab && heroHome) fab.classList.toggle('fab-hide', topSec.getBoundingClientRect().bottom > 120); };
+      this._onScroll();
       document.addEventListener('scroll', this._onScroll, { passive: true, capture: true });
       const s1 = document.querySelector('.s1');
       const s1Track = document.querySelector('.s1-track');
@@ -451,7 +440,7 @@ class Component extends DCLogic {
       const s1Size = () => {
         if (!s1) return;
         if (!s1On()) { s1.style.height = ''; s1Track.style.transform = ''; s1Cards.forEach((c) => { c.style.opacity = ''; c.style.translate = ''; }); return; }
-        s1.style.height = ((window.innerHeight || 800) + s1Dist()) + 'px';
+        s1.style.height = ((window.innerHeight || 800) + s1Dist() * 0.6) + 'px';
       };
       const s1Tick = () => {
         this._s1Raf = null;
@@ -635,7 +624,7 @@ class Component extends DCLogic {
   renderVals() {
     const list = [
       { q: 'Serve la prescrizione del medico?', a: 'No, puoi prenotare direttamente. Se hai esami o referti recenti, portali alla prima visita.' },
-      { q: 'Quanto costa una seduta?', a: 'Ogni seduta da 60 minuti costa 65 €, sia la prima visita sia le successive o il check posturale. Per i soci One Gym 60 €. Il percorso da 5 sedute costa 300 €.' },
+      { q: 'Quanto costa una seduta?', a: 'Ogni seduta da 60 minuti costa 65 €, sia la prima visita sia le successive o il check posturale. Per i soci One Gym 60 €.' },
       { q: 'In quale studio posso venire?', a: 'In entrambi: a Casalecchio di Reno, dentro One Gym in Via Verga 3/12, oppure a Bologna in Via Corticella 216/2. Osteopatia e check posturale si fanno in entrambi; il recupero funzionale solo a Casalecchio, dove ci sono gli attrezzi della palestra. Prezzi e durata delle sedute sono gli stessi.' },
       { q: 'Quante sedute servono?', a: 'Dipende dal problema: te lo dico alla fine della prima visita. Di solito le sedute sono più ravvicinate all’inizio e poi si diradano.' },
       { q: 'Posso venire anche senza dolore?', a: 'Sì. Il check posturale serve proprio a capire come stai e a prevenire.' },

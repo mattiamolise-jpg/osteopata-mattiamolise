@@ -100,7 +100,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
 .btn{transition:background-color .2s ease,color .2s ease}
 .btn:hover{background:#0D2328 !important;color:#F7F3EE !important}
 .btn-l:hover{background:#F7F3EE !important;color:#0D2328 !important}
-.fab{display:none}
+.fab{display:none}.fab{transition:opacity .3s ease,transform .3s ease}.fab.fab-hide{opacity:0;transform:translateY(24px);pointer-events:none}
 @media (max-width:900px){.s1{height:auto !important}.s1-stick{position:relative !important;height:auto !important;padding:80px 0}.s1-track{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}.s1-card{width:82vw;scroll-snap-align:start}.s1-bar{display:none}.tl-line{left:64px !important;top:96px !important}.tl-item{grid-template-columns:64px minmax(0,1fr);gap:20px 24px}.tl-item > .tl-dot{grid-column:1;grid-row:1;justify-self:start}.tl-item > .tl-card{grid-column:2;grid-row:1;text-align:left !important;padding:0 !important}.tl-item > .tl-media{grid-column:2;grid-row:2}.sticky-col{position:static !important}.px{translate:none !important;scale:none !important}#approccio > *,#chi-sono > *{grid-column:1 / -1 !important;margin-left:0 !important}.navlinks{display:none !important}.fab{display:flex !important}.topserv{display:none !important}.badge{display:none !important}.m-hide{display:none !important}.m-show{display:inline !important}.brand-sub{font-size:8.5px !important;letter-spacing:.14em !important}.hero-id{flex-direction:column;align-items:flex-start !important;gap:14px !important}.hero-id .asm-box{width:76px !important;height:76px !important}.hero-id > span{font-size:16px !important}.hero-card{padding:26px 22px !important}.rv-l.pre{transform:translate3d(-40px,0,0)}.rv-r.pre{transform:translate3d(40px,0,0)}.rv-up.pre{transform:translate3d(0,40px,0)}.ftr{padding-bottom:84px}.g12 > *{grid-column:1 / -1 !important}.pv-shade{background:linear-gradient(180deg,rgba(13,35,40,.55) 0%,rgba(13,35,40,.82) 40%,rgba(13,35,40,.9) 100%) !important}}
 @media (prefers-reduced-motion:reduce){.tl-card,.tl-media,.tl-dot{transition:none !important;opacity:1 !important;transform:none !important}.hl,.hl-d{transition:none !important;background-size:100% 100% !important}.ph::before,.ph-h::after{transition:none !important}.px{translate:none !important;scale:none !important}.rv,.rv.pre{transition:none !important;opacity:1 !important;transform:none !important}a:hover .go,.cue,.cue:hover{animation:none !important}}
 </style>
@@ -112,8 +112,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
 
   <div style="background:#ECE6DF;color:#0D2328;font-size:13px;border-bottom:1px solid #DED4C9">
     <div style="max-width:1320px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <span><span class="m-hide">Casalecchio di Reno e Bologna · </span><a class="ilink" href="tel:+393313570472" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>331 357 0472</a><span class="m-hide"> · <a class="ilink" href="mailto:mattiamolise.osteo@gmail.com" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 6.5 8.2 6.3 8.2-6.3"/></svg>mattiamolise.osteo@gmail.com</a> · <a class="ilink" href="https://www.instagram.com/osteopata_mattiamolise/" aria-label="Instagram" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a></span><span class="m-show" style="display:none"> · Casalecchio e Bologna</span></span>
-      <span class="topserv" style="display:flex;gap:28px"><span>Osteopatia</span><span>Chinesiologia</span><span>Check posturale</span></span>
+      <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="m-hide">Casalecchio di Reno e Bologna</span><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><a class="ilink" href="tel:+393313570472" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>331 357 0472</a><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><span class="m-hide"><a class="ilink" href="mailto:mattiamolise.osteo@gmail.com" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 6.5 8.2 6.3 8.2-6.3"/></svg>mattiamolise.osteo@gmail.com</a></span><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><span class="m-hide"><a class="ilink" href="https://www.instagram.com/osteopata_mattiamolise/" aria-label="Instagram" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a></span><span class="m-show" style="display:none"> · Casalecchio e Bologna</span></span>
     </div>
   </div>
 
@@ -144,7 +143,6 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
       </div>
       <div style="display:flex;gap:28px;flex-wrap:wrap;padding-top:18px;border-top:1.5px solid #0D2328;max-width:560px;font-size:15px;color:#3D4F52">
         <span><b style="font-family:'Brown',sans-serif;font-weight:400;font-size:22px;color:#0D2328">60 min</b><br>ogni seduta</span>
-        <span><b style="font-family:'Brown',sans-serif;font-weight:400;font-size:22px;color:#0D2328">65 €</b><br>60 € soci One Gym</span>
         <span><b style="font-family:'Brown',sans-serif;font-weight:400;font-size:22px;color:#0D2328">Due studi</b><br>Casalecchio e Bologna</span>
       </div>
     </div>
@@ -181,7 +179,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
   <section style="max-width:1320px;width:100%;margin:0 auto;padding-left:32px;padding-right:32px;box-sizing:border-box;padding-top:130px;display:flex;flex-direction:column;gap:44px">
     <div class="rv rv-up" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px">
       <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:14px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">COME LAVORO</span><h2 style="margin:0;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(36px,4.6vw,64px);line-height:1.04;letter-spacing:-.01em">Quattro passi, <span class="hl">un piano chiaro</span></h2></div>
-      <p style="margin:0;max-width:440px;font-size:17px;line-height:1.6;color:#3D4F52">Alla fine della prima visita sai cosa hai, cosa facciamo e quante sedute prevedo.</p>
+      <p style="margin:0;max-width:440px;font-size:17px;line-height:1.6;color:#3D4F52">Alla fine della prima visita hai un quadro chiaro: cosa alimenta il dolore, cosa facciamo e quante sedute prevedo.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
       <div class="rv rv-up d0" style="background:#F7F3EE;border-radius:8px;padding:30px 28px;display:flex;flex-direction:column;gap:14px"><span style="font-family:'Brown',sans-serif;font-weight:300;font-size:64px;line-height:.9;color:#1F4E5A">1</span><span style="font-family:'Brown',sans-serif;font-size:26px">Ti ascolto</span><p style="margin:0;font-size:16px;line-height:1.6;color:#3D4F52">Quando è iniziato, cosa lo peggiora e cosa lo calma, il tuo lavoro, lo sport, il sonno. Se hai esami o referti, li guardiamo insieme.</p></div>
@@ -214,7 +212,6 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
       <div style="display:flex;gap:44px;flex-wrap:wrap;align-items:baseline">
         <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#1F4E5A">SEDUTA · 60 MIN</span><span style="font-family:'Brown',sans-serif;font-weight:300;font-size:48px;line-height:1">65 €</span></span>
         <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#1F4E5A">SOCI ONE GYM</span><span style="font-family:'Brown',sans-serif;font-weight:300;font-size:48px;line-height:1">60 €</span></span>
-        <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:13px;font-weight:700;letter-spacing:.18em;color:#1F4E5A">PERCORSO · 5 SEDUTE</span><span style="font-family:'Brown',sans-serif;font-weight:300;font-size:48px;line-height:1">300 €</span></span>
       </div>
       <a class="btn" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita%20per%20postura%20e%20lavoro%20alla%20scrivania" style="background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:15px 24px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA LA PRIMA VISITA</a>
     </div>
@@ -279,7 +276,7 @@ a:hover .go,a:focus .go{animation:arrh .75s linear 1}
     <div style="max-width:1320px;margin:0 auto;padding:18px 32px 32px;border-top:1px solid #DED4C9;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#3D4F52"><span>© 2026 Mattia Molise · P.IVA 04061291201</span><a href="privacy.html" style="color:#3D4F52">Privacy e cookie</a></div>
   </footer>
 
-  <a class="fab" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:30;justify-content:center;background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:15px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.14em;box-shadow:0 8px 24px rgba(13,35,40,.3)">SCRIVIMI SU WHATSAPP</a>
+  <a class="fab" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="position:fixed;left:16px;right:16px;bottom:16px;z-index:30;justify-content:center;background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:15px;border-radius:999px;border:1.5px solid rgba(247,243,238,.7);font-size:13px;font-weight:700;letter-spacing:.14em;box-shadow:0 8px 24px rgba(13,35,40,.3)">SCRIVIMI SU WHATSAPP</a>
 </div>
 
 <script>
@@ -295,7 +292,9 @@ class Component extends DCLogic {
       const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const hdr = document.querySelector('.hdr');
       const topSec = document.querySelector('#top');
-      this._onScroll = () => { if (hdr && topSec) hdr.classList.toggle('compact', topSec.getBoundingClientRect().top < -80); };
+      const fab = document.querySelector('.fab'); const heroHome = topSec && topSec.querySelector('.hero-card');
+      this._onScroll = () => { if (hdr && topSec) hdr.classList.toggle('compact', topSec.getBoundingClientRect().top < -80); if (fab && heroHome) fab.classList.toggle('fab-hide', topSec.getBoundingClientRect().bottom > 120); };
+      this._onScroll();
       document.addEventListener('scroll', this._onScroll, { passive: true, capture: true });
       const s1 = document.querySelector('.s1');
       const s1Track = document.querySelector('.s1-track');
@@ -306,7 +305,7 @@ class Component extends DCLogic {
       const s1Size = () => {
         if (!s1) return;
         if (!s1On()) { s1.style.height = ''; s1Track.style.transform = ''; s1Cards.forEach((c) => { c.style.opacity = ''; c.style.translate = ''; }); return; }
-        s1.style.height = ((window.innerHeight || 800) + s1Dist()) + 'px';
+        s1.style.height = ((window.innerHeight || 800) + s1Dist() * 0.6) + 'px';
       };
       const s1Tick = () => {
         this._s1Raf = null;

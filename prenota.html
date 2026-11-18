@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Prenota online · Osteopata a Casalecchio di Reno e Bologna · Mattia Molise</title>
+<meta name="description" content="Prenota online una seduta di osteopatia con Mattia Molise a Casalecchio di Reno (One Gym) o a Bologna Corticella.">
+<link rel="icon" href="assets/img/logo-v2-micro.svg" type="image/svg+xml">
+
+
+
+<style>
+@font-face{font-family:'Atkinson Hyperlegible';src:url('assets/fonts/atk400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Atkinson Hyperlegible';src:url('assets/fonts/atk700.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+body{margin:0;background:#ECE6DF}
+@font-face{font-family:'MMDigits';src:url('assets/fonts/brown-Regular.woff2') format('woff2');font-weight:400;unicode-range:U+0030-0039}@font-face{font-family:'MMDigits';src:url('assets/fonts/brown-Bold.woff2') format('woff2');font-weight:700;unicode-range:U+0030-0039}
+@font-face{font-family:'Brown';src:url('assets/fonts/brown-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Brown';src:url('assets/fonts/brown-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Brown';src:url('assets/fonts/brown-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Brown';src:url('assets/fonts/brown-Regular.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Brown';src:url('assets/fonts/brown-Light.woff2') format('woff2');font-weight:300;font-style:italic;font-display:swap}
+a{color:#1F4E5A}a:hover{color:#0D2328}
+*{box-sizing:border-box}
+.hl,.hl-d{padding:0 .14em;-webkit-box-decoration-break:clone;box-decoration-break:clone;background-repeat:no-repeat;background-position:0 0;background-size:100% 100%;transition:background-size 1.2s cubic-bezier(.65,0,.35,1) .35s}
+.hl{background-image:linear-gradient(#DED4C9,#DED4C9)}
+.hl-d{background-image:linear-gradient(rgba(143,176,181,.24),rgba(143,176,181,.24))}
+.hl.hl-pre,.hl-d.hl-pre{background-size:0% 100%}
+.ph{position:relative;isolation:isolate;overflow:hidden}
+.ph::before{content:"";position:absolute;inset:0;z-index:-1;background:inherit;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .9s ease}
+.ph-h{cursor:default}
+.ilink{display:inline-flex;align-items:center;gap:8px}.ilink .ico{flex:none}
+.mm-tablist{position:relative;display:inline-flex;gap:4px;padding:5px;border:1.5px solid #0D2328;border-radius:999px;background:#F7F3EE}
+.mm-tab{position:relative;z-index:1;border:0;background:transparent;color:#0D2328;font-family:'Brown',sans-serif;font-size:17px;padding:11px 20px;border-radius:999px;cursor:pointer;transition:color .35s ease}
+.mm-tab[aria-selected="true"]{color:#F7F3EE}
+.mm-tab:focus-visible{outline:3px solid #8FB0B5;outline-offset:2px}
+.mm-ind{position:absolute;z-index:0;top:5px;bottom:5px;left:5px;width:0;border-radius:999px;background:#1F4E5A;transition:transform .45s cubic-bezier(.2,.7,.2,1),width .45s cubic-bezier(.2,.7,.2,1)}
+.mm-tabs [hidden]{display:none !important}
+.mm-panel{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.mm-panel.on{opacity:1;transform:none}
+.mm-panel .ph-h:hover > .pimg{transform:scale(1.05)}
+.mm-map{transition:background-color .4s ease}
+.mm-form input,.mm-form textarea{transition:box-shadow .25s ease,border-color .25s ease}
+.mm-form input:focus,.mm-form textarea:focus{box-shadow:0 0 0 3px rgba(143,176,181,.55);outline:none}
+.mm-form button[disabled]{opacity:.7;cursor:progress}
+@media (prefers-reduced-motion:reduce){.mm-panel,.mm-ind,.mm-tab{transition:none !important}}
+@media (max-width:900px){.mm-tablist{width:100%}.mm-tab{flex:1;font-size:15px;padding:11px 10px}}
+.mm-form input:focus-visible,.mm-form textarea:focus-visible{outline:3px solid #8FB0B5;outline-offset:1px}
+.mm-form .err{border-color:#F2B8B5 !important;box-shadow:0 0 0 2px #F2B8B5}
+.svc{cursor:pointer}
+.svc-t{background-image:linear-gradient(rgba(143,176,181,.55),rgba(143,176,181,.55));background-repeat:no-repeat;background-position:0 92%;background-size:0% .16em;transition:background-size .6s cubic-bezier(.2,.7,.2,1)}
+.svc:hover .svc-t{background-size:100% .16em}
+.svc:hover .go{animation:arrh .75s linear 1}
+.svc:hover .ph-h > .pimg{transform:scale(1.05);filter:brightness(.94)}
+.svc:hover .ph-h::after{transform:translateY(0)}
+.svc-cur{position:absolute;left:0;top:0;z-index:3;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;background:#1F4E5A;color:#F7F3EE;display:flex;align-items:center;justify-content:center;font-family:'Brown',sans-serif;font-size:17px;pointer-events:none;transform:scale(0);transition:transform .35s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.svc-cur.on{transform:scale(1)}
+@media (hover:none),(pointer:coarse){.svc-cur{display:none}}
+.ph>.pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .9s ease}
+.ph-h:hover>.pimg{transform:scale(1.05);filter:brightness(.94)}
+.ph-h::after{z-index:1}
+.ph-h:hover::before{transform:scale(1.05);filter:brightness(.94)}
+.ph-h::after{content:attr(data-cap);position:absolute;left:0;right:0;bottom:0;padding:16px 18px;background:rgba(13,35,40,.82);color:#F7F3EE;font-family:'Brown',sans-serif;font-size:18px;font-weight:400;letter-spacing:0;transform:translateY(101%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.ph-h:hover::after{transform:translateY(0)}
+.px{will-change:translate}
+.sticky-col{position:sticky;top:120px}
+.s1-card{flex:none;width:400px;display:flex;flex-direction:column;gap:18px;padding:28px;border:1px solid rgba(201,215,217,.25);border-radius:8px;background:rgba(13,35,40,.55);transition:border-color .3s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.s1-card:hover{border-color:#8FB0B5;transform:translateY(-6px)}
+
+.tl{position:relative}
+.tl-line{position:absolute;left:50%;width:2px;margin-left:-1px;background:#DED4C9}
+.tl-fill{position:absolute;left:0;top:0;width:100%;height:0;background:#1F4E5A}
+.tl-item{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 120px minmax(0,1fr);align-items:center;padding:56px 0}
+.tl-dot{justify-self:center;position:relative;z-index:2;width:64px;height:64px;border-radius:50%;background:#ECE6DF;border:2px solid #DED4C9;display:flex;align-items:center;justify-content:center;font-family:'Brown',sans-serif;font-weight:700;font-size:22px;color:#8A857C;transition:background-color .5s ease,border-color .5s ease,color .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.tl-item.on .tl-dot{background:#1F4E5A;border-color:#1F4E5A;color:#F7F3EE;transform:scale(1.08)}
+.tl-card,.tl-media{opacity:.22;transform:translateY(24px);transition:opacity .7s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.tl-item.on .tl-card,.tl-item.on .tl-media{opacity:1;transform:none}
+@media (min-width:901px){.tl-item{padding:16px 0}.tl-item + .tl-item{margin-top:-40px}}
+.ph{background:#CFC5B9;border-radius:8px;display:flex;align-items:flex-end;padding:14px 16px;color:#3D4F52;font-size:12px;font-weight:700;letter-spacing:.14em;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.12) 0 2px,transparent 2px 14px)}
+.ph-d{background:#2A3E43;color:#8FB0B5;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.rv{transition-property:opacity,transform;transition-duration:1.5s;transition-timing-function:cubic-bezier(.445,.05,.55,.95)}
+.rv.pre{opacity:0}
+.rv-l.pre{transform:translate3d(-100px,0,0)}
+.rv-r.pre{transform:translate3d(100px,0,0)}
+.rv-up.pre{transform:translate3d(0,100px,0)}
+.rv-zoom.pre,.ph.rv.pre{transform:scale(1.2)}
+.t10{transition-duration:1s !important}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+.asm-box{position:relative}
+.asm{position:absolute;inset:0;width:100%;height:auto;transition-duration:1.7s !important}
+.w9{transition-delay:.9s}.w10{transition-delay:1s}.w13{transition-delay:1.3s}.w16{transition-delay:1.6s}
+.go{display:inline-block}
+a:hover .go,a:focus .go{animation:arrh .75s linear 1}
+@keyframes arrh{16.65%{transform:translateX(6px)}33.3%{transform:translateX(-4px)}49.95%{transform:translateX(2px)}66.6%{transform:translateX(-1px)}83.25%{transform:translateX(.5px)}100%{transform:translateX(0)}}
+.cue{animation:arrv 4s ease-in-out 1.5s infinite}
+.cue:hover,.cue:focus{animation:arrv1 1s ease-in-out 1}
+@keyframes arrv{4.16%{transform:translateY(8px)}8.33%{transform:translateY(-6px)}12.5%{transform:translateY(4px)}16.66%{transform:translateY(-2px)}20.83%{transform:translateY(1px)}25%,100%{transform:translateY(0)}}
+@keyframes arrv1{16.65%{transform:translateY(8px)}33.3%{transform:translateY(-6px)}49.95%{transform:translateY(4px)}66.6%{transform:translateY(-2px)}83.25%{transform:translateY(1px)}100%{transform:translateY(0)}}
+.hdr{transition:padding .25s ease,box-shadow .25s ease,background-color .25s ease}
+.hdr.compact{padding-top:8px !important;padding-bottom:8px !important;background:rgba(236,230,223,.94) !important;box-shadow:0 6px 18px rgba(13,35,40,.08)}
+.btn{transition:background-color .2s ease,color .2s ease}
+.btn:hover{background:#0D2328 !important;color:#F7F3EE !important}
+.btn-l:hover{background:#F7F3EE !important;color:#0D2328 !important}
+.fab{display:none}.fab{transition:opacity .3s ease,transform .3s ease}.fab.fab-hide{opacity:0;transform:translateY(24px);pointer-events:none}
+@media (max-width:900px){.s1{height:auto !important}.s1-stick{position:relative !important;height:auto !important;padding:80px 0}.s1-track{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}.s1-card{width:82vw;scroll-snap-align:start}.s1-bar{display:none}.tl-line{left:64px !important;top:96px !important}.tl-item{grid-template-columns:64px minmax(0,1fr);gap:20px 24px}.tl-item > .tl-dot{grid-column:1;grid-row:1;justify-self:start}.tl-item > .tl-card{grid-column:2;grid-row:1;text-align:left !important;padding:0 !important}.tl-item > .tl-media{grid-column:2;grid-row:2}.sticky-col{position:static !important}.px{translate:none !important;scale:none !important}#approccio > *,#chi-sono > *{grid-column:1 / -1 !important;margin-left:0 !important}.navlinks{display:none !important}.fab{display:flex !important}.topserv{display:none !important}.badge{display:none !important}.m-hide{display:none !important}.m-show{display:inline !important}.brand-sub{font-size:8.5px !important;letter-spacing:.14em !important}.hero-id{flex-direction:column;align-items:flex-start !important;gap:14px !important}.hero-id .asm-box{width:76px !important;height:76px !important}.hero-id > span{font-size:16px !important}.hero-card{padding:26px 22px !important}.rv-l.pre{transform:translate3d(-40px,0,0)}.rv-r.pre{transform:translate3d(40px,0,0)}.rv-up.pre{transform:translate3d(0,40px,0)}.ftr{padding-bottom:84px}.g12 > *{grid-column:1 / -1 !important}.pv-shade{background:linear-gradient(180deg,rgba(13,35,40,.55) 0%,rgba(13,35,40,.82) 40%,rgba(13,35,40,.9) 100%) !important}}
+@media (prefers-reduced-motion:reduce){.tl-card,.tl-media,.tl-dot{transition:none !important;opacity:1 !important;transform:none !important}.hl,.hl-d{transition:none !important;background-size:100% 100% !important}.ph::before,.ph-h::after{transition:none !important}.px{translate:none !important;scale:none !important}.rv,.rv.pre{transition:none !important;opacity:1 !important;transform:none !important}a:hover .go,.cue,.cue:hover{animation:none !important}}
+</style>
+
+<style>
+/* ===== Prenotazione online ===== */
+.pr{--acc:#1F4E5A;--ink:#0D2328;--mut:#3D4F52;--line:#DED4C9;--cream:#F7F3EE;--bg:#ECE6DF;--danger:#A93226}
+.pr{max-width:820px;margin:0 auto;padding:28px 32px 96px}
+.pr-eyebrow{font-size:14px;font-weight:700;letter-spacing:.2em;color:var(--acc)}
+.pr h1{margin:12px 0 14px;font-family:'Brown',sans-serif;font-weight:300;font-size:clamp(40px,5vw,64px);line-height:1.04;letter-spacing:-.015em}
+.pr .sub{margin:0 0 36px;font-size:18px;line-height:1.6;color:var(--mut);max-width:620px}
+.card{background:var(--cream);border:2px solid var(--ink);border-radius:8px;padding:clamp(20px,3vw,32px);margin-bottom:20px}
+.step{display:flex;align-items:center;gap:12px;font-family:'Brown',sans-serif;font-size:24px;margin-bottom:18px}
+.step .n{width:34px;height:34px;border-radius:50%;background:var(--acc);color:var(--cream);display:grid;place-items:center;font-size:16px;font-weight:700;flex:none}
+.sedi{display:grid;gap:12px}
+@media(min-width:640px){.sedi{grid-template-columns:1fr 1fr}}
+.sede{text-align:left;border:1.5px solid var(--line);background:var(--bg);border-radius:8px;padding:18px;cursor:pointer;display:flex;flex-direction:column;gap:4px;color:var(--ink);font:inherit;transition:border-color .2s ease,background-color .2s ease}
+.sede:hover{border-color:var(--acc)}
+.sede.on{border-color:var(--acc);background:#fff;box-shadow:0 0 0 2px var(--acc) inset}
+.sede b{font-family:'Brown',sans-serif;font-weight:400;font-size:21px}
+.sede span{font-size:15px;color:var(--mut);line-height:1.5}
+.sede .prezzo{color:var(--ink);font-weight:700;font-size:14px;letter-spacing:.04em;margin-top:4px}
+.days{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x mandatory}
+.day{flex:none;width:72px;border:1.5px solid var(--line);background:var(--bg);border-radius:8px;padding:9px 4px;text-align:center;cursor:pointer;scroll-snap-align:start;color:var(--ink);font:inherit}
+.day .w{font-size:12px;text-transform:uppercase;color:var(--mut);font-weight:700;letter-spacing:.1em}
+.day .d{font-family:'Brown',sans-serif;font-size:26px;line-height:1.2}
+.day .m{font-size:12px;color:var(--mut)}
+.day.on{border-color:var(--acc);background:var(--acc);color:var(--cream)}
+.day.on .w,.day.on .m{color:var(--cream)}
+.day:disabled{opacity:.35;cursor:default}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px;margin-top:12px}
+.slot{border:1.5px solid var(--line);background:var(--bg);border-radius:6px;padding:11px 0;font:inherit;font-weight:700;cursor:pointer;color:var(--ink)}
+.slot:hover{border-color:var(--acc)}
+.slot.on{background:var(--acc);border-color:var(--acc);color:var(--cream)}
+.muted{color:var(--mut);font-size:15px}
+label.f{display:block;font-size:15px;font-weight:700;margin:16px 0 6px}
+input.i,textarea.i{width:100%;border:1.5px solid var(--line);border-radius:6px;padding:12px 14px;background:#fff;font:inherit;font-size:17px;color:var(--ink);outline:0}
+input.i:focus,textarea.i:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(143,176,181,.55)}
+textarea.i{min-height:84px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:15px;margin-top:16px;color:var(--mut);line-height:1.5}
+.check input{margin-top:3px;width:18px;height:18px;accent-color:var(--acc);flex:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.pbtn{display:flex;align-items:center;justify-content:center;border:0;border-radius:6px;background:var(--acc);color:var(--cream);font:inherit;font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:17px 22px;cursor:pointer;width:100%;margin-top:22px;text-decoration:none;transition:background-color .2s ease}
+.pbtn:hover{background:var(--ink);color:var(--cream)}
+.pbtn:disabled{opacity:.6;cursor:progress}
+.pbtn.light{background:transparent;color:var(--acc);border:1.5px solid var(--acc)}
+.pbtn.light:hover{background:var(--acc);color:var(--cream)}
+.err{color:var(--danger);font-size:15px;margin-top:12px}
+.summary{background:var(--bg);border-left:4px solid var(--acc);border-radius:4px;padding:14px 16px;font-size:16px;line-height:1.55}
+.done{text-align:center}
+.done .ok{width:64px;height:64px;border-radius:50%;background:var(--acc);color:var(--cream);display:grid;place-items:center;font-size:30px;margin:4px auto 14px}
+.done h2{font-family:'Brown',sans-serif;font-weight:300;font-size:36px;margin:0 0 10px}
+.skel{height:48px;border-radius:6px;background:linear-gradient(90deg,#E4DCD2,#F1ECE6,#E4DCD2);background-size:200% 100%;animation:sk 1.2s infinite}
+@keyframes sk{to{background-position:-200% 0}}
+.demo{display:none}
+[hidden]{display:none!important}
+@media (max-width:640px){.pr{padding:20px 18px 80px}}
+</style>
+</head>
+<body>
+
+<div style="display:flex;flex-direction:column;min-width:0;overflow-x:clip;background:#ECE6DF;color:#0D2328;font-family:'MMDigits','Atkinson Hyperlegible',sans-serif">
+
+  <div style="background:#ECE6DF;color:#0D2328;font-size:13px;border-bottom:1px solid #DED4C9">
+    <div style="max-width:1320px;margin:0 auto;padding:9px 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span class="m-hide">Casalecchio di Reno e Bologna</span><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><a class="ilink" href="tel:+393313570472" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>331 357 0472</a><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><span class="m-hide"><a class="ilink" href="mailto:mattiamolise.osteo@gmail.com" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 6.5 8.2 6.3 8.2-6.3"/></svg>mattiamolise.osteo@gmail.com</a></span><span class="m-hide" aria-hidden="true" style="color:#8FB0B5">|</span><span class="m-hide"><a class="ilink" href="https://www.instagram.com/osteopata_mattiamolise/" aria-label="Instagram" style="color:#0D2328;text-decoration:none"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a></span><span class="m-show" style="display:none"> · Casalecchio e Bologna</span></span>
+    </div>
+  </div>
+
+  <header class="hdr" style="position:sticky;top:0;z-index:20;background:#ECE6DF;border-bottom:1.5px solid #0D2328;padding:16px 0">
+    <div style="max-width:1320px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#0D2328"><img src="assets/img/logo-v2-micro.svg" alt="" style="width:40px;height:auto"><span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:'Brown',sans-serif;font-size:21px">Mattia Molise</span><span class="brand-sub" style="font-size:10px;font-weight:700;letter-spacing:.2em;color:#1F4E5A;margin-top:4px;white-space:nowrap">OSTEOPATA · CHINESIOLOGO</span></span></a>
+      <nav class="navlinks" aria-label="Menu principale" style="display:flex;gap:30px;font-size:16px">
+        <a href="cosa-tratto.html" style="color:#0D2328;text-decoration:none">Cosa tratto</a>
+        <a href="index.html#servizi" style="color:#0D2328;text-decoration:none">Servizi</a>
+        <a href="index.html#prezzi" style="color:#0D2328;text-decoration:none">Prezzi</a>
+        <a href="chi-sono.html" style="color:#0D2328;text-decoration:none">Chi sono</a>
+        <a href="contatti.html" style="color:#0D2328;text-decoration:none">Contatti</a>
+      </nav>
+      <a class="btn" href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita" style="background:#1F4E5A;color:#F7F3EE;text-decoration:none;padding:13px 20px;border-radius:6px;font-size:13px;font-weight:700;letter-spacing:.14em">PRENOTA</a>
+    </div>
+  </header>
+<nav aria-label="Percorso" style="max-width:1320px;width:100%;margin:0 auto;padding-left:32px;padding-right:32px;box-sizing:border-box;padding-top:22px;font-size:14px;color:#3D4F52"><a href="index.html" style="color:#3D4F52">Home</a> &nbsp;/&nbsp; <span style="color:#0D2328">Prenota online</span></nav>
+<main class="pr">
+  <span class="pr-eyebrow">PRENOTA ONLINE</span>
+  <h1>Scegli <span class="hl">giorno e ora.</span></h1>
+  <p class="sub">Seduta di osteopatia da 60 minuti. Scegli lo studio, il giorno e l'orario: la conferma è immediata. Preferisci scrivermi? <a href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita">Scrivimi su WhatsApp</a>.</p>
+  <div class="demo" id="demo" hidden>Anteprima: gli orari sono di esempio finché la pagina non è collegata allo script Google.</div>
+
+  <!-- 1. Sede -->
+  <section class="card" id="s1">
+    <div class="step"><span class="n">1</span>Dove?<button class="edit" id="e1" hidden>Cambia</button></div>
+    <div class="sedi" id="sedi"><div class="skel"></div><div class="skel"></div></div>
+  </section>
+
+  <!-- 2. Giorno e orario -->
+  <section class="card" id="s2" hidden>
+    <div class="step"><span class="n">2</span>Quando?</div>
+    <div class="days" id="days"></div>
+    <div id="slotsBox"></div>
+  </section>
+
+  <!-- 3. Dati -->
+  <section class="card" id="s3" hidden>
+    <div class="step"><span class="n">3</span>I tuoi dati</div>
+    <div class="summary" id="riepilogo"></div>
+    <form id="form" novalidate>
+      <label class="f" for="nome">Nome e cognome</label>
+      <input class="i" id="nome" autocomplete="name" required maxlength="80">
+      <label class="f" for="telefono">Telefono</label>
+      <input class="i" id="telefono" type="tel" autocomplete="tel" required maxlength="30" placeholder="Per eventuali comunicazioni sull'appuntamento">
+      <label class="f" for="email">Email <span class="muted">(facoltativa, per ricevere la conferma)</span></label>
+      <input class="i" id="email" type="email" autocomplete="email" maxlength="120">
+      <label class="f" for="note">Note <span class="muted">(facoltative)</span></label>
+      <textarea class="i" id="note" maxlength="500" placeholder="Es. prima visita, socio One Gym… Non serve scrivere dettagli sulla tua salute: ne parliamo di persona."></textarea>
+      <div class="hp" aria-hidden="true"><label>Sito web <input id="sito_web" tabindex="-1" autocomplete="off"></label></div>
+      <label class="check"><input type="checkbox" id="privacy"> <span>Acconsento al trattamento dei miei dati personali per la gestione dell'appuntamento, come descritto nell'<a href="privacy.html" target="_blank" rel="noopener">informativa privacy</a>.</span></label>
+      <div class="err" id="err" hidden></div>
+      <button class="pbtn" id="invia" type="submit">Conferma prenotazione</button>
+    </form>
+  </section>
+
+  <!-- 4. Fatto -->
+  <section class="card done" id="s4" hidden>
+    <div class="ok">✓</div>
+    <h2>Prenotazione confermata</h2>
+    <p id="fatto" style="margin:0 0 14px"></p>
+    <p class="muted" id="fattoNota"></p>
+    <a class="pbtn light" id="waBtn" hidden target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
+    <button class="pbtn light" id="altra">Prenota un'altra seduta</button>
+  </section>
+</main>
+  <footer class="ftr" style="background:#ECE6DF;color:#0D2328;border-top:2px solid #0D2328">
+    <div style="max-width:1320px;margin:0 auto;padding:64px 32px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px">
+      <div style="display:flex;flex-direction:column;gap:12px"><div style="display:flex;align-items:center;gap:10px"><img src="assets/img/logo-v2-micro.svg" alt="" style="width:40px;height:auto"><span style="font-family:'Brown',sans-serif;font-size:22px">Mattia Molise</span></div><span style="font-size:12px;font-weight:700;letter-spacing:.2em;color:#1F4E5A">OSTEOPATA · CHINESIOLOGO</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:15px"><span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:#1F4E5A">STUDI</span><span>One Gym · Via Verga 3/12<br>40033 Casalecchio di Reno (BO) · dal lunedì al sabato, su appuntamento</span><span style="margin-top:6px">Via Corticella 216/2<br>40128 Bologna · dal lunedì al venerdì, su appuntamento</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:15px"><span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:#1F4E5A">CONTATTI</span><a class="ilink" href="tel:+393313570472" style="color:#0D2328"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11.5 11.5 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a2 2 0 0 1-2.2 2A17 17 0 0 1 3 5.7 2 2 0 0 1 5 3.5Z"/></svg>331 357 0472</a><a class="ilink" href="mailto:mattiamolise.osteo@gmail.com" style="color:#0D2328"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.8 6.5 8.2 6.3 8.2-6.3"/></svg>mattiamolise.osteo@gmail.com</a><a class="ilink" href="https://www.instagram.com/osteopata_mattiamolise/" style="color:#0D2328"><svg class="ico" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg>@osteopata_mattiamolise</a></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:15px"><span style="font-size:13px;font-weight:700;letter-spacing:.16em;color:#1F4E5A">SITO</span><a href="cosa-tratto.html" style="color:#0D2328">Cosa tratto</a><a href="index.html#servizi" style="color:#0D2328">Servizi</a><a href="index.html#prezzi" style="color:#0D2328">Prezzi</a><a href="chi-sono.html" style="color:#0D2328">Chi sono</a><a href="contatti.html" style="color:#0D2328">Contatti</a></div>
+    </div>
+    <div style="max-width:1320px;margin:0 auto;padding:18px 32px 32px;border-top:1px solid #DED4C9;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#3D4F52"><span>© 2026 Mattia Molise · P.IVA 04061291201</span><a href="privacy.html" style="color:#3D4F52">Privacy e cookie</a></div>
+  </footer>
+</div>
+
+<script>
+/* ======== Incolla qui l'URL della web app Google (Distribuisci → URL dell'app web) ======== */
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgMkz2EmA0NdzZ2O54cIfTT5Apc1XSUDEHsafUD_TNLAG5Z3b1hFjLqLwcZBXcN5ZB/exec";
+/* ========================================================================================== */
+
+(() => {
+"use strict";
+const $ = s => document.querySelector(s);
+const GG = ["lun","mar","mer","gio","ven","sab","dom"];
+const GG_L = ["lunedì","martedì","mercoledì","giovedì","venerdì","sabato","domenica"];
+const MM = ["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"];
+const MM_L = ["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"];
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const parse = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d); };
+const dataLunga = s => { const d = parse(s); return `${GG_L[(d.getDay()+6)%7]} ${d.getDate()} ${MM_L[d.getMonth()]}`; };
+const DEMO = !SCRIPT_URL;
+
+const st = { info: null, sede: null, giorni: [], data: null, ora: null };
+
+/* ---------- API ---------- */
+async function api(params) {
+  if (DEMO) return demoApi(params);
+  const url = SCRIPT_URL + "?" + new URLSearchParams(params).toString();
+  const r = await fetch(url, { redirect: "follow" });
+  if (!r.ok) throw new Error("rete");
+  return r.json();
+}
+async function apiPost(body) {
+  if (DEMO) return { ok: true, sede: st.info.sedi.find(s => s.id === body.sede).nome, indirizzo: st.info.sedi.find(s => s.id === body.sede).indirizzo, quando: dataLunga(body.data) + " alle " + body.ora, whatsapp: "" };
+  // text/plain evita la richiesta preliminare CORS, che Apps Script non gestisce
+  const r = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify(body), headers: { "Content-Type": "text/plain;charset=utf-8" }, redirect: "follow" });
+  if (!r.ok) throw new Error("rete");
+  return r.json();
+}
+function demoApi(p) {
+  const sedi = [
+    { id: "onegym", nome: "One Gym · Casalecchio di Reno", indirizzo: "Via Verga 3/12, 40033 Casalecchio di Reno (BO)", nota: "Dentro la palestra One Gym (combat + Hyrox). 60 € per i soci.", prezzo: "65 € · 60 € soci One Gym", giorni: [1,3,5,6] },
+    { id: "corticella", nome: "Corticella · Bologna", indirizzo: "Via Corticella 216/2, 40128 Bologna", nota: "Studio medico in zona Corticella. Solo il giovedì mattina.", prezzo: "65 €", giorni: [4] }
+  ];
+  if (p.action === "sedi") return { ok: true, sedi, durata: 60, giorniAvanti: 30, whatsapp: "" };
+  const sede = sedi.find(s => s.id === p.sede), out = [], oggi = new Date();
+  for (let i = 1; i <= 21; i++) {
+    const d = new Date(oggi.getFullYear(), oggi.getMonth(), oggi.getDate() + i), dow = (d.getDay()+6)%7+1;
+    if (!sede.giorni.includes(dow)) continue;
+    const base = p.sede === "onegym" ? ["08:00","09:00","10:00","11:00","12:00","15:00","16:30","18:00","19:00"] : ["10:00","11:00","12:00","13:00"];
+    const slots = (dow === 6 ? ["09:00","10:00","11:00","12:00"] : dow === 3 ? base.slice(0,5) : base).filter((_, k) => (k + i) % 3 !== 0);
+    out.push({ data: `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`, giorno: dow, slots });
+  }
+  return { ok: true, sede: p.sede, giorni: out };
+}
+
+/* ---------- step 1: sedi ---------- */
+async function caricaSedi() {
+  try {
+    const r = await api({ action: "sedi" });
+    if (!r.ok) throw new Error(r.errore);
+    st.info = r; mostraSedi();
+  } catch (e) {
+    $("#sedi").innerHTML = `<p class="err">Non riesco a caricare le disponibilità. Riprova tra poco${waTesto()}.</p>`;
+  }
+}
+function waTesto() { return st.info && st.info.whatsapp ? ` o <a href="https://wa.me/${esc(st.info.whatsapp)}" target="_blank" rel="noopener">scrivimi su WhatsApp</a>` : ""; }
+function mostraSedi() {
+  const box = $("#sedi"); box.innerHTML = "";
+  st.info.sedi.forEach(s => {
+    const giorni = s.giorni.map(g => GG[g-1]).join(" · ");
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "sede" + (st.sede === s.id ? " on" : "");
+    b.innerHTML = `<b>${esc(s.nome)}</b><span>${esc(s.indirizzo)}</span><span>${esc(s.nota)}</span><span class="prezzo">${esc(s.prezzo)} · ${esc(giorni)}</span>`;
+    b.onclick = () => scegliSede(s.id);
+    box.append(b);
+  });
+}
+async function scegliSede(id) {
+  st.sede = id; st.data = null; st.ora = null;
+  mostraSedi();
+  $("#s2").hidden = false; $("#s3").hidden = true;
+  $("#days").innerHTML = ""; $("#slotsBox").innerHTML = `<div class="skel" style="margin-top:6px"></div>`;
+  $("#s2").scrollIntoView({ behavior: "smooth", block: "start" });
+  try {
+    const r = await api({ action: "slots", sede: id });
+    if (!r.ok) throw new Error(r.errore);
+    if (st.sede !== id) return;
+    st.giorni = r.giorni || [];
+    mostraGiorni();
+  } catch (e) {
+    $("#slotsBox").innerHTML = `<p class="err">Non riesco a caricare gli orari. Riprova tra poco${waTesto()}.</p>`;
+  }
+}
+
+/* ---------- step 2: giorni e orari ---------- */
+function mostraGiorni() {
+  const box = $("#days"); box.innerHTML = "";
+  const conPosto = st.giorni.filter(g => g.slots.length);
+  if (!conPosto.length) { $("#slotsBox").innerHTML = `<p class="muted">Nessun orario libero nelle prossime settimane in questa sede${waTesto()}.</p>`; return; }
+  if (!st.data || !conPosto.find(g => g.data === st.data)) st.data = conPosto[0].data;
+  st.giorni.forEach(g => {
+    const d = parse(g.data);
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "day" + (g.data === st.data ? " on" : "");
+    b.disabled = !g.slots.length;
+    b.innerHTML = `<div class="w">${GG[(d.getDay()+6)%7]}</div><div class="d">${d.getDate()}</div><div class="m">${MM[d.getMonth()]}</div>`;
+    b.title = g.slots.length ? `${g.slots.length} orari liberi` : "Completo";
+    b.onclick = () => { st.data = g.data; st.ora = null; mostraGiorni(); $("#s3").hidden = true; };
+    box.append(b);
+  });
+  const on = box.querySelector(".on"); if (on) on.scrollIntoView({ block: "nearest", inline: "nearest" });
+  mostraOrari();
+}
+function mostraOrari() {
+  const g = st.giorni.find(x => x.data === st.data);
+  const box = $("#slotsBox");
+  box.innerHTML = `<p class="muted" style="margin:8px 0 0">Orari liberi ${esc(dataLunga(st.data))}:</p>`;
+  const grid = document.createElement("div"); grid.className = "slots";
+  g.slots.forEach(o => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "slot" + (o === st.ora ? " on" : ""); b.textContent = o;
+    b.onclick = () => { st.ora = o; mostraOrari(); apriDati(); };
+    grid.append(b);
+  });
+  box.append(grid);
+}
+
+/* ---------- step 3: dati ---------- */
+function apriDati() {
+  const s = st.info.sedi.find(x => x.id === st.sede);
+  $("#riepilogo").innerHTML = `<b>${esc(dataLunga(st.data))} alle ${esc(st.ora)}</b><br>${esc(s.nome)} – ${esc(s.indirizzo)}<br>${st.info.durata} minuti · ${esc(s.prezzo)}`;
+  $("#err").hidden = true;
+  $("#s3").hidden = false;
+  $("#s3").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+function errore(msg) { const e = $("#err"); e.innerHTML = msg; e.hidden = false; }
+$("#form").addEventListener("submit", async ev => {
+  ev.preventDefault();
+  const dati = {
+    sede: st.sede, data: st.data, ora: st.ora,
+    nome: $("#nome").value.trim(), telefono: $("#telefono").value.trim(), email: $("#email").value.trim(),
+    note: $("#note").value.trim(), privacy: $("#privacy").checked, sito_web: $("#sito_web").value
+  };
+  if (dati.nome.length < 3) return errore("Scrivi nome e cognome.");
+  if (dati.telefono.replace(/\D/g, "").length < 8) return errore("Controlla il numero di telefono.");
+  if (dati.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(dati.email)) return errore("Controlla l'email.");
+  if (!dati.privacy) return errore("Per prenotare serve il consenso al trattamento dei dati.");
+  const btn = $("#invia"); btn.disabled = true; btn.textContent = "Invio in corso…";
+  try {
+    const r = await apiPost(dati);
+    if (r.ok) return fatto(r, dati);
+    if (r.occupato) {
+      errore(esc(r.errore || "Quest'orario non è più disponibile.") + " Ti mostro gli orari aggiornati.");
+      const sede = st.sede; await scegliSede(sede);
+      return;
+    }
+    errore(esc(r.errore || "Qualcosa non ha funzionato.") + waTesto());
+  } catch (e) {
+    errore("Non sono riuscito a inviare la prenotazione. Controlla la connessione e riprova" + waTesto() + ".");
+  } finally {
+    btn.disabled = false; btn.textContent = "Conferma prenotazione";
+  }
+});
+
+/* ---------- step 4: fatto ---------- */
+function fatto(r, dati) {
+  ["#s1","#s2","#s3"].forEach(s => $(s).hidden = true);
+  $("#s4").hidden = false;
+  $("#fatto").innerHTML = `<b>${esc(r.quando)}</b><br>${esc(r.sede)}<br><span class="muted">${esc(r.indirizzo)}</span>`;
+  $("#fattoNota").textContent = dati.email ? "Ti ho mandato un'email di conferma. Se non la trovi, guarda nello spam." : "Salva data e ora: per spostare o annullare contattami.";
+  const wa = r.whatsapp || (st.info && st.info.whatsapp);
+  if (wa) { const b = $("#waBtn"); b.href = "https://wa.me/" + encodeURIComponent(wa); b.hidden = false; }
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+$("#altra").onclick = () => { $("#s4").hidden = true; $("#s1").hidden = false; $("#form").reset(); st.sede = null; st.data = null; st.ora = null; mostraSedi(); };
+
+$("#demo").hidden = !DEMO;
+caricaSedi();
+})();
+</script>
+</body>
+</html>

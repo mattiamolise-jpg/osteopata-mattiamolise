@@ -160,6 +160,24 @@ textarea.i{min-height:84px;resize:vertical}
 .demo{display:none}
 [hidden]{display:none!important}
 @media (max-width:640px){.pr{padding:20px 18px 80px}}
+/* --- Effetto "pila" su mobile --- */
+.mini{display:none;align-items:center;gap:12px;width:100%;background:none;border:0;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.mini .ck{width:30px;height:30px;border-radius:50%;background:var(--acc);color:var(--cream);display:grid;place-items:center;font-size:14px;font-weight:700;flex:none}
+.mini .mt{flex:1;min-width:0;font-size:14px;line-height:1.35;color:var(--mut)}
+.mini .mt b{display:block;font-family:'Brown',sans-serif;font-weight:400;font-size:18px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini .ch{font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--acc);text-transform:uppercase;flex:none}
+.card.collapsed .step{display:none}
+.card.collapsed .mini{display:flex}
+.card.collapsed .body{display:none}
+.body{overflow:visible}
+@media (max-width:899px){
+  .stack{position:relative}
+  .stack > .card{position:relative;transform-origin:50% 0}
+  #s1{z-index:1}#s2{z-index:2}#s3{z-index:3}#s4{z-index:4}
+  .stack > .card.collapsed{padding:14px 18px 30px;margin-bottom:0;background:#EFE9E2;border-color:rgba(13,35,40,.55)}
+  .stack > .card.collapsed + .card:not([hidden]){margin-top:-18px;box-shadow:0 -12px 26px -14px rgba(13,35,40,.45)}
+}
+
 </style>
 </head>
 <body>
@@ -192,22 +210,30 @@ textarea.i{min-height:84px;resize:vertical}
   <p class="sub">Seduta di osteopatia da 60 minuti. Scegli lo studio, il giorno e l'orario: la conferma è immediata. Preferisci scrivermi? <a href="https://wa.me/393313570472?text=Ciao%20Mattia%2C%20vorrei%20prenotare%20una%20visita">Scrivimi su WhatsApp</a>.</p>
   <div class="demo" id="demo" hidden>Anteprima: gli orari sono di esempio finché la pagina non è collegata allo script Google.</div>
 
+  <div class="stack">
   <!-- 1. Sede -->
   <section class="card" id="s1">
-    <div class="step"><span class="n">1</span>Dove?<button class="edit" id="e1" hidden>Cambia</button></div>
+    <div class="step"><span class="n">1</span>Dove?</div>
+    <button type="button" class="mini" data-open="s1"><span class="ck">✓</span><span class="mt"></span><span class="ch">Cambia</span></button>
+    <div class="body">
     <div class="sedi" id="sedi"><div class="skel"></div><div class="skel"></div></div>
+    </div>
   </section>
 
   <!-- 2. Giorno e orario -->
   <section class="card" id="s2" hidden>
     <div class="step"><span class="n">2</span>Quando?</div>
+    <button type="button" class="mini" data-open="s2"><span class="ck">✓</span><span class="mt"></span><span class="ch">Cambia</span></button>
+    <div class="body">
     <div class="days" id="days"></div>
     <div id="slotsBox"></div>
+    </div>
   </section>
 
   <!-- 3. Dati -->
   <section class="card" id="s3" hidden>
     <div class="step"><span class="n">3</span>I tuoi dati</div>
+    <div class="body">
     <div class="summary" id="riepilogo"></div>
     <form id="form" novalidate>
       <label class="f" for="nome">Nome e cognome</label>
@@ -223,6 +249,7 @@ textarea.i{min-height:84px;resize:vertical}
       <div class="err" id="err" hidden></div>
       <button class="pbtn" id="invia" type="submit">Conferma prenotazione</button>
     </form>
+    </div>
   </section>
 
   <!-- 4. Fatto -->
@@ -234,6 +261,7 @@ textarea.i{min-height:84px;resize:vertical}
     <a class="pbtn light" id="waBtn" hidden target="_blank" rel="noopener">Scrivimi su WhatsApp</a>
     <button class="pbtn light" id="altra">Prenota un'altra seduta</button>
   </section>
+  </div>
 </main>
   <footer class="ftr" style="background:#ECE6DF;color:#0D2328;border-top:2px solid #0D2328">
     <div style="max-width:1320px;margin:0 auto;padding:64px 32px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px">
@@ -246,6 +274,7 @@ textarea.i{min-height:84px;resize:vertical}
   </footer>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 /* ======== Incolla qui l'URL della web app Google (Distribuisci → URL dell'app web) ======== */
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgMkz2EmA0NdzZ2O54cIfTT5Apc1XSUDEHsafUD_TNLAG5Z3b1hFjLqLwcZBXcN5ZB/exec";
@@ -264,6 +293,63 @@ const dataLunga = s => { const d = parse(s); return `${GG_L[(d.getDay()+6)%7]} $
 const DEMO = !SCRIPT_URL;
 
 const st = { info: null, sede: null, giorni: [], data: null, ora: null };
+
+/* ---------- effetto pila (solo mobile) ---------- */
+const mq = window.matchMedia("(max-width: 899px)");
+const lento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isMob = () => mq.matches;
+const anim = () => !!window.gsap && !lento;
+function topStack() {
+  const y = $(".stack").getBoundingClientRect().top + window.scrollY - 96;
+  window.scrollTo({ top: Math.max(0, y), behavior: lento ? "auto" : "smooth" });
+}
+function chiudi(id, testo) {
+  const c = $(id); c.querySelector(".mini .mt").innerHTML = testo;
+  if (c.classList.contains("collapsed")) return;
+  if (anim()) {
+    const b = c.querySelector(".body");
+    const h0 = c.offsetHeight;
+    c.classList.add("collapsed");
+    const h1 = c.offsetHeight;
+    gsap.fromTo(c, { height: h0 }, { height: h1, duration: .55, ease: "power3.inOut", clearProps: "height" });
+    gsap.fromTo(c.querySelector(".mini"), { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: .4, delay: .2, ease: "power2.out" });
+  } else c.classList.add("collapsed");
+}
+function apri(id) {
+  const c = $(id);
+  if (!c.classList.contains("collapsed")) return;
+  if (anim()) {
+    const h0 = c.offsetHeight;
+    c.classList.remove("collapsed");
+    const h1 = c.offsetHeight;
+    gsap.fromTo(c, { height: h0 }, { height: h1, duration: .5, ease: "power3.out", clearProps: "height" });
+    gsap.fromTo(c.querySelector(".body"), { opacity: 0 }, { opacity: 1, duration: .35, delay: .15 });
+  } else c.classList.remove("collapsed");
+}
+function entra(id) {
+  const c = $(id); const era = c.hidden;
+  c.hidden = false; c.classList.remove("collapsed");
+  if (era && anim() && isMob()) {
+    gsap.fromTo(c, { y: 110, opacity: 0, scale: .94, rotateX: 8 },
+      { y: 0, opacity: 1, scale: 1, rotateX: 0, duration: .8, ease: "back.out(1.25)", delay: .12, clearProps: "transform,opacity" });
+  }
+}
+function esci(id) {
+  const c = $(id); if (c.hidden) return;
+  if (anim() && isMob()) {
+    gsap.to(c, { y: 60, opacity: 0, duration: .3, ease: "power2.in", onComplete: () => { c.hidden = true; gsap.set(c, { clearProps: "transform,opacity" }); } });
+  } else c.hidden = true;
+}
+function riapriTutto() { ["#s1", "#s2", "#s3"].forEach(id => $(id).classList.remove("collapsed")); }
+mq.addEventListener ? mq.addEventListener("change", () => { if (!isMob()) riapriTutto(); }) : mq.addListener(() => { if (!isMob()) riapriTutto(); });
+document.querySelectorAll(".mini").forEach(b => b.addEventListener("click", () => {
+  const id = "#" + b.dataset.open;
+  if (id === "#s1") { esci("#s3"); esci("#s2"); apri("#s1"); }
+  else { esci("#s3"); apri("#s2"); }
+  setTimeout(topStack, 50);
+}));
+
+
 
 /* ---------- API ---------- */
 async function api(params) {
@@ -322,9 +408,18 @@ function mostraSedi() {
 async function scegliSede(id) {
   st.sede = id; st.data = null; st.ora = null;
   mostraSedi();
-  $("#s2").hidden = false; $("#s3").hidden = true;
   $("#days").innerHTML = ""; $("#slotsBox").innerHTML = `<div class="skel" style="margin-top:6px"></div>`;
-  $("#s2").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (isMob()) {
+    const s = st.info.sedi.find(x => x.id === id);
+    esci("#s3");
+    chiudi("#s1", `<b>${esc(s.nome)}</b>${esc(s.indirizzo)}`);
+    $("#s2").classList.remove("collapsed");
+    entra("#s2");
+    setTimeout(topStack, 80);
+  } else {
+    $("#s2").hidden = false; $("#s3").hidden = true;
+    $("#s2").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
   try {
     const r = await api({ action: "slots", sede: id });
     if (!r.ok) throw new Error(r.errore);
@@ -374,8 +469,15 @@ function apriDati() {
   const s = st.info.sedi.find(x => x.id === st.sede);
   $("#riepilogo").innerHTML = `<b>${esc(dataLunga(st.data))} alle ${esc(st.ora)}</b><br>${esc(s.nome)} – ${esc(s.indirizzo)}<br>${st.info.durata} minuti · ${esc(s.prezzo)}`;
   $("#err").hidden = true;
-  $("#s3").hidden = false;
-  $("#s3").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (isMob()) {
+    const d = parse(st.data);
+    chiudi("#s2", `<b>${GG_L[(d.getDay()+6)%7]} ${d.getDate()} ${MM[d.getMonth()]} · ore ${esc(st.ora)}</b>${st.info.durata} minuti`);
+    entra("#s3");
+    setTimeout(topStack, 80);
+  } else {
+    $("#s3").hidden = false;
+    $("#s3").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
 function errore(msg) { const e = $("#err"); e.innerHTML = msg; e.hidden = false; }
 $("#form").addEventListener("submit", async ev => {
@@ -408,8 +510,8 @@ $("#form").addEventListener("submit", async ev => {
 
 /* ---------- step 4: fatto ---------- */
 function fatto(r, dati) {
-  ["#s1","#s2","#s3"].forEach(s => $(s).hidden = true);
-  $("#s4").hidden = false;
+  ["#s1","#s2","#s3"].forEach(s => { $(s).hidden = true; $(s).classList.remove("collapsed"); });
+  entra("#s4");
   $("#fatto").innerHTML = `<b>${esc(r.quando)}</b><br>${esc(r.sede)}<br><span class="muted">${esc(r.indirizzo)}</span>`;
   $("#fattoNota").textContent = dati.email ? "Ti ho mandato un'email di conferma. Se non la trovi, guarda nello spam." : "Salva data e ora: per spostare o annullare contattami.";
   const wa = r.whatsapp || (st.info && st.info.whatsapp);
